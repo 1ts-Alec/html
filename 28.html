@@ -1,22 +1,8 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7856P3VNT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-L7856P3VNT');
-</script><!DOCTYPE html><html lang="en"><head>
+<script>window.dataLayer=[];window.gtag=function(){};</script><!DOCTYPE html><html lang="en"><head>
   
   
-  <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-          dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-');
-  </script>
+  <script>window.dataLayer=[];window.gtag=function(){};</script>
     <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@main/basketball-frvr/">
       <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@main/ytgame.js" nonce="-sOJ1RQ8_ggBND0jamQKHQ"></script>
 
@@ -1718,113 +1704,7 @@ if(!(window.console && console.log)) {
 
         <div id="overlay"></div>
 
-      <script nonce="-sOJ1RQ8_ggBND0jamQKHQ">
-       ;(function () {
-  function parseStack(err) {
-    var stack = [];
-    var lines = (err && err.stack || '').split('\n'); // split stack trace into lines
-    lines.shift(); // remove first line, the error message
-    for(var i = 0; i < lines.length; i++) {
-      // simplyfy and shorten details
-      stack.push(lines[i]
-                 .replace(/^\s*at\s+/g, '')
-                 .replace(/(https?:\/\/[^\/]+)?/g, '')
-                 .replace(/https?:\/\/[^\/]+/g, '')
-                 .replace(/\/?game\/[^\/]+\/[^\/]+/g, '')
-                 .replace(/:?<anonymous>:?/g, '')
-                 .replace(/^([^ ]+)\s+\(/g, '$1(')
-                 .replace(/^([0-9]+:[0-9]+$)/g, '($1)')
-                );
-    }
-    return stack;
-  }
-  function catchAndSnitch(errorType) {
-    return function(errorMsg, sourceURL, line, column, err) {
-      if(sourceURL instanceof Error) { // Enable optional parameters
-        err = sourceURL;
-        sourceURL = undefined;
-      }
-      var configJs = window.__FRVR.cohort().configJs;
-      err = err || new Error(errorMsg);
-      var parts = ((err.stack || '').split('\n')[1] || '').split(':');
-      var colFromStack = parts.pop() || undefined;
-      var lineFromStack = parts.pop() || undefined;
-      line = line || err.lineNumber || err.lineno || err.line || lineFromStack || '';
-      column = column || err.columnNumber || err.colno || err.column || colFromStack || '';
-      sourceURL = sourceURL || err.sourceURL || '';
-      errorMsg = errorMsg || err.message || (err.toString && err.toString()) || '';
-      var parsedStack = parseStack(err) || [];
-      var errSrc = sourceURL + ': ' + line + ': ' + column;
-      window.Host && Host.Log && Host.Log(errorType + ' Error: ' + errorMsg + ': ' + errSrc + '\nStack: ' + parsedStack.join('\n'));
-      console.error(errorType + ' Error', errorMsg + ': ' + errSrc, err);
-      errSrc += ': ' + parsedStack.join('|').substr(0, 150);
-      var eventCategory = configJs['id'] + ' ' +
-          configJs['version'] + ' ' +
-          configJs['build'] + ' ' +
-          errorType + ' Error';
-      var errTime = Date.now() - (window.__FRVR.startTime || 0);
-      if(window.gax) {
-        gax('send', 'event', eventCategory, errorMsg, errSrc, errTime);
-        gax('send', 'exception', {exDescription: eventCategory + ': ' + errorMsg + ': ' + errSrc});
-      }
- /*     if(typeof FBInstant !== 'undefined' && typeof FBInstant.logEvent === 'function') {
-        FBInstant.logEvent('onerror', errTime, {
-          appName: configJs['id'],
-          appVersion: configJs['version'],
-          appBuild: configJs['build'],
-          category: eventCategory,
-          message: errorMsg,
-          stack: errSrc
-        });
-      }*/
-    };
-  }
-  window.onerror = catchAndSnitch('JavaScript');
-  window.__FRVR.createErrorHandler = catchAndSnitch;
-  var promiseErrorHandler = catchAndSnitch('Promise');
-  window.onunhandledrejection = function(rejection) {
-    var err = (rejection && rejection.reason) || {};
-    promiseErrorHandler("onunhandledrejection error", undefined, undefined, undefined, err);
-  };
-})()
-;
-
-       ;(function () {
-  var configJs = window.__FRVR.cohort().configJs;
-
-  // Stub these two early, since they will be called even in systems
-  // without regular Google Analytics support such as Android.
-  // However window.ga will have to be unstubbed just in time before
-  // the regular Google Analytics snippet.
-  window.ga = function() {
-    // console.warn('Stubbed ga() being called:', arguments)
-  };
-  window.gax = function() {
-    // console.warn('Stubbed gax() being called;', arguments)
-  };
-
-  window.gaAppInfo = {
-    appId: 'com.frvr.'+ configJs['id'],
-    appName: configJs['id'],
-    appVersion: configJs['version'],
-  };
-  window.initGoogle = function(){
-    if (!(window.ga instanceof Function)) {
-      window.ga = window.gax = function() {};
-      return;
-    }
-    ga('set', window.gaAppInfo);
-    ga('create', configJs['gaId'] || 'UA-54081731-1', 'auto', window.gaAppInfo);
-    if (configJs['gaGameId']) {
-      ga('create', configJs['gaGameId'], 'auto', 'game', window.gaAppInfo);
-    }
-    gax('require', 'displayfeatures');
-    gax('send', 'pageview', gaPath + location.search);
-  }
-})()
-;
-
-      </script>
+      <script>window.ga=function(){};</script>
 
       <script nonce="-sOJ1RQ8_ggBND0jamQKHQ">
 
