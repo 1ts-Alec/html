@@ -2,7 +2,22 @@
 <html lang="en">
 
 <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/cruelty-squad@main/">
+    <script>
+(function(){
+  if (!navigator.serviceWorker) return;
+  const noop = () => Promise.reject(new Error('sw-disabled'));
+  try {
+    Object.defineProperty(navigator, 'serviceWorker', {
+      configurable: true,
+      value: { register: noop, getRegistration: () => Promise.resolve(undefined), ready: Promise.resolve({ active: null }) }
+    });
+  } catch (e) {
+    try { navigator.serviceWorker.register = noop; } catch (_) {}
+  }
+})();
+</script>
+
+    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/cruelty-squad@51a5e7c3335bb78b5670f9543f90a062f8d6ca27/">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 	<title>Cruelty Squad</title>
@@ -150,6 +165,7 @@
 	<script>
 		window.godotRunStart = function() {
 		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":540769488,"index.wasm":17860295},"focusCanvas":true,"gdnativeLibs":[]};
+		try { GODOT_CONFIG.ensureCrossOriginIsolationHeaders = false; GODOT_CONFIG.serviceWorker = null; } catch(e) {}
 		var engine = new Engine(GODOT_CONFIG);
 
 		(function() {

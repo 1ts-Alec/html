@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+<script>
+(function(){
+  if (!navigator.serviceWorker) return;
+  const noop = () => Promise.reject(new Error('sw-disabled'));
+  try {
+    Object.defineProperty(navigator, 'serviceWorker', {
+      configurable: true,
+      value: { register: noop, getRegistration: () => Promise.resolve(undefined), ready: Promise.resolve({ active: null }) }
+    });
+  } catch (e) {
+    try { navigator.serviceWorker.register = noop; } catch (_) {}
+  }
+})();
+</script>
+
+		<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/vena@94a57b66f03158a2db7e6d94ee64e8a6d91c4bdb/">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 		<title>Vena</title>
@@ -136,7 +152,7 @@ body {
 		<script src="index.js"></script>
 		<script>
 window.godotRunStart = function() {
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":91474536,"index.wasm":1509558},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"serviceWorker":null,"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":91474536,"index.wasm":1509558},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 

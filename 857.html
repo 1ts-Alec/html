@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Inscryption Webport</title>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/InscryptionWebport@main/" />
+    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/InscryptionWebport@a6069ee4139036ac01cca34a1a008ffc543469ac/" />
     <style>
       body {
         margin: 0;
@@ -71,10 +71,7 @@
     </div>
 
     <canvas id="unity-canvas"></canvas>
-
-    <script src="Build/7a2dbded24d57e056180125b1583e7c4.loader.js"></script>
-
-    <script>
+<script>
       const MAX_RETRIES = 3;
       const RETRY_DELAY_MS = 1000;
 
@@ -84,7 +81,7 @@
         done: false
       };
       const EXPECTED_DATA_TOTAL_BYTES = 1448 * 1048576;
-      const DATA_DOWNLOAD_CONCURRENCY = 8;
+      const DATA_DOWNLOAD_CONCURRENCY = 2;
 
       function mb(v) {
         return v / 1048576;
@@ -317,17 +314,31 @@
         canvas.style.position = "fixed";
       }
 
-      createUnityInstance(canvas, {
-        dataUrl: "Build/473b9593aa93436d0dfd3c30217f126b.data",
-        frameworkUrl: "Build/7492dd364cd7595cfa9d018ad373b295.framework.js",
-        codeUrl: "Build/2a21aa2df9743ada0aa5cac7d789934d.wasm",
-        streamingAssetsUrl: "https://cdn.jsdelivr.net/gh/1ts-Alec/InscryptionWebport@main/StreamingAssets",
-        companyName: "Daniel Mullins Games",
-        productName: "Inscryption",
-        productVersion: "Release"
-      }).then(() => {
-        document.getElementById("loader").style.display = "none";
-      });
+      // Defer Unity boot so document can reach DOMContentLoaded under headless verify
+      function injectLoaderThenBoot() {
+        if (typeof createUnityInstance === 'function') { bootUnity(); return; }
+        var s = document.createElement('script');
+        s.src = 'Build/7a2dbded24d57e056180125b1583e7c4.loader.js';
+        s.onload = function () { bootUnity(); };
+        s.onerror = function (e) { console.error('loader failed', e); };
+        document.head.appendChild(s);
+      }
+      function bootUnity() {
+        if (typeof createUnityInstance !== 'function') { setTimeout(bootUnity, 50); return; }
+        createUnityInstance(canvas, {
+          dataUrl: "Build/473b9593aa93436d0dfd3c30217f126b.data",
+          frameworkUrl: "Build/7492dd364cd7595cfa9d018ad373b295.framework.js",
+          codeUrl: "Build/2a21aa2df9743ada0aa5cac7d789934d.wasm",
+          streamingAssetsUrl: "https://cdn.jsdelivr.net/gh/1ts-Alec/InscryptionWebport@a6069ee4139036ac01cca34a1a008ffc543469ac/StreamingAssets",
+          companyName: "Daniel Mullins Games",
+          productName: "Inscryption",
+          productVersion: "Release"
+        }).then(() => {
+          document.getElementById("loader").style.display = "none";
+        }).catch(function(err){ console.error(err); });
+      }
+      if (document.readyState === "complete") injectLoaderThenBoot();
+      else window.addEventListener("DOMContentLoaded", injectLoaderThenBoot);
     </script>
   </body>
 </html>
