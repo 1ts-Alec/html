@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/hollow-knight-silksong@bcbe014765f2f6ca4b1d82ac25755a0299a600ab/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/hollow-knight-silksong@bcbe014765f2f6ca4b1d82ac25755a0299a600ab/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity Web Player | Hollow Knight SilkSong</title>
@@ -230,7 +230,7 @@ function getParts(file, start, end) {
     loadingBar.style.display = "block";
 
     const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/gh/1ts-Alec/hollow-knight-silksong@bcbe014765f2f6ca4b1d82ac25755a0299a600ab/Build/w-pt.loader.js";
+    script.src = "https://raw.esm.sh/gh/1ts-Alec/hollow-knight-silksong@bcbe014765f2f6ca4b1d82ac25755a0299a600ab/Build/w-pt.loader.js";
 
     script.onload = () => {
       createUnityInstance(canvas, config, (progress) => {

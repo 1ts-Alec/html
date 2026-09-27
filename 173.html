@@ -8,7 +8,7 @@
     
     
     <script>window.google=window.google||{};google.ima=google.ima||{AdDisplayContainer:function(){this.initialize=function(){};},AdsLoader:function(){this.addEventListener=function(){};this.contentComplete=function(){};this.destroy=function(){};},AdsRequest:function(){},AdEvent:{},AdErrorEvent:{}};window.adsbygoogle=window.adsbygoogle||[];</script>
-    <script id="gamemonetize-sdk" src="https://cdn.jsdelivr.net/gh/1ts-Alec/sdk@8d7d79eb2547de4c91ee0943f0b5bf13ba3bd837/sdkjs.js"></script>
+    <script id="gamemonetize-sdk" src="https://raw.esm.sh/gh/1ts-Alec/sdk@8d7d79eb2547de4c91ee0943f0b5bf13ba3bd837/sdkjs.js"></script>
     <!-- ads removed -->
     <script>
       window.parent.maeExportApis_();
@@ -153,12 +153,12 @@
       </div>
     </div>
     <script
-      src="https://cdn.jsdelivr.net/gh/1ts-Alec/unxa.github.io@976db99398423b4e5a8b327892c2b57b6a5b766f/g/drift-hunters/UnityLoader2019.js"></script>
+      src="https://raw.esm.sh/gh/1ts-Alec/unxa.github.io@976db99398423b4e5a8b327892c2b57b6a5b766f/g/drift-hunters/UnityLoader2019.js"></script>
     <script>
       var gameInstance;
       (async function(){
         const RAW='https://raw.githubusercontent.com/1ts-Alec/unxa.github.io/976db99398423b4e5a8b327892c2b57b6a5b766f/g/drift-hunters/';
-        const cfg=await (await fetch('https://cdn.jsdelivr.net/gh/1ts-Alec/unxa.github.io@976db99398423b4e5a8b327892c2b57b6a5b766f/g/drift-hunters/dh.json')).json();
+        const cfg=await (await fetch('https://raw.esm.sh/gh/1ts-Alec/unxa.github.io@976db99398423b4e5a8b327892c2b57b6a5b766f/g/drift-hunters/dh.json')).json();
         for (const k of Object.keys(cfg)) {
           if (typeof cfg[k]==='string' && /\.(unityweb|data|wasm|jsgz)(\?|$)/i.test(cfg[k]) && !/^https?:/i.test(cfg[k])) cfg[k]=RAW+cfg[k];
         }
