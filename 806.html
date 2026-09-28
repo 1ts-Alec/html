@@ -82,9 +82,6 @@
   100% { background-position: 0% 50%; }
 }
     </style>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json");
-    </script>
   </head>
   <body>
 <div id="loading-text"
@@ -136,7 +133,7 @@ var loadingText = document.querySelector("#loading-text");
       );
       const mergedBlob = new Blob(buffers);
       const response = new Response(mergedBlob);
-      await cache.put(cacheKey, response);
+      try { await cache.put(cacheKey, response); } catch (e) { console.warn("cache write skipped:", e); }
       return URL.createObjectURL(mergedBlob);
     }
 
