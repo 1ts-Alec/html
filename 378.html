@@ -58,7 +58,7 @@
             dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/camouflage-and-sniper/Build/5aa7c229e9057bcb9347d42bcd12a891.data",
             frameworkUrl: buildUrl + "/dc23378ecca25259518439c29c11ead1.js",
             codeUrl: buildUrl + "/16cb652043a654e1a894e2ee93022d1a.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Cool Games",
             productName: "CamoSniper",
             productVersion: "0.1"

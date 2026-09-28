@@ -112,7 +112,7 @@
               dataUrl: dataUrl,
               frameworkUrl: buildUrl + "/e12dac5a3f5e3f677b009118afef20b7.framework.js",
               codeUrl: wasmUrl,
-              streamingAssetsUrl: "StreamingAssets",
+              streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
               companyName: "Games Place",
               productName: "Granny 3",
               productVersion: "0.1",

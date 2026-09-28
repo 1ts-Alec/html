@@ -68,7 +68,7 @@
            dataUrl: buildUrl + "/BlockBlast1.1-8.data.unityweb",
            frameworkUrl: buildUrl + "/BlockBlast1.1-8.framework.js.unityweb",
            codeUrl: buildUrl + "/BlockBlast1.1-8.wasm.unityweb",
-           streamingAssetsUrl: "StreamingAssets",
+           streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
            companyName: "reun",
            productName: "Block Blast Puzzle",
            productVersion: "1.1",

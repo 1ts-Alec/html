@@ -37,7 +37,7 @@
             dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/tug-of-war-with-cars/Build/4999c26253c70cafcefe83faa379d0a3.data",
             frameworkUrl: buildUrl + "/1354e8c8fe18fcb01d1d24487fdd58d6.js",
             codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/tug-of-war-with-cars/Build/a255eae3848a36cd2a32db46947a65da.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "C Games",
             productName: "Tug of War",
             productVersion: "1.0",

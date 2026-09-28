@@ -120,7 +120,7 @@
         dataUrl: dataUrl,
         frameworkUrl: "Build/WebGL.framework.js.gz",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "kulu",
         productName: "Hungry Lamu 2",
         productVersion: "0.1",

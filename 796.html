@@ -124,7 +124,7 @@ var loadingText = document.querySelector("#loading-text");
         dataUrl: dataUrl,
         frameworkUrl: "Build/ST1.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Zeoworks",
         productName: "Slendytubbies",
         productVersion: "1.11",

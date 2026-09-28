@@ -96,7 +96,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/vb.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "",
         productName: "Flying Gorilla",
         productVersion: "1.0",

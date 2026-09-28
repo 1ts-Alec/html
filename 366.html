@@ -69,7 +69,7 @@
     dataUrl: "https://raw.githubusercontent.com/1ts-Alec/bulbasaurchat.github.io/de2858a9fa7b7176cee2788842d4278686969811/games/merge-harvest-main/merge-harvest-main/Build/WebBuildGD_231.data.unityweb",
     frameworkUrl: buildUrl + "/WebBuildGD_231.framework.js.unityweb",
   codeUrl: buildUrl + "/WebBuildGD_231.wasm.unityweb",
-  streamingAssetsUrl: "StreamingAssets",
+  streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
           companyName: "Bonanza",
   productName: "Merge Harvest",
   productVersion: "231",

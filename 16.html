@@ -71,7 +71,7 @@
       dataUrl: buildUrl + "/HidNSeek.data",
       frameworkUrl: buildUrl + "/HidNSeek.framework.js",
         codeUrl: buildUrl + "/HidNSeek.wasm.zip",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Seenax",
       productName: "Hide 'N Seek!",
       productVersion: "1.9.25",

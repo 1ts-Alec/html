@@ -136,7 +136,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/ShiftAtMidnightPort.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "slqntdevss",
         productName: "ShiftAtMidnight",
         productVersion: "1.00",

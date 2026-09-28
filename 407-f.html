@@ -58,7 +58,7 @@
             dataUrl: buildUrl + "/2bb4d9cd5decf0089eea2d49e389deb6.data.unityweb",
             frameworkUrl: buildUrl + "/3928cb353505c4bf547df4b7c9f67143.js.unityweb",
             codeUrl: buildUrl + "/d4b1d81618b67f65e8521490b7099eda.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "C Games",
             productName: "Who Dies Last",
             productVersion: "1.0"

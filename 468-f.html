@@ -154,7 +154,7 @@
                 dataUrl: dataUrl,
                 frameworkUrl: buildUrl + "/hk.framework.js",
                 codeUrl: wasmurl,
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "Team Cherry & ",
                 productName: "Hollow Knight",
                 productVersion: "1.1",

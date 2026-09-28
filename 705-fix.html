@@ -120,7 +120,7 @@
         dataUrl: dataUrl,
         frameworkUrl: "Build/built.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "98Corbins",
         productName: "Iron Lung",
         productVersion: "1.0",

@@ -33,7 +33,7 @@
             dataUrl: buildUrl + "/TimeShooter2_GD.data.unityweb",
             frameworkUrl: buildUrl + "/TimeShooter2_GD.framework.js.unityweb",
             codeUrl: buildUrl + "/TimeShooter2_GD.wasm.unityweb",
-            streamingAssetsUrl: "StreamingAssets",
+            streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "g80g",
             productName: "Time Shooter 2",
             productVersion: "0.1",

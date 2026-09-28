@@ -120,7 +120,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Shredsauce",
         productName: "Shredsauce",
         productVersion: "1.0",

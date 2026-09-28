@@ -64,7 +64,7 @@
         dataUrl: buildUrl + "/StickWeb.data",
         frameworkUrl: buildUrl + "/StickWeb.framework.js",
         codeUrl: buildUrl + "/StickWeb.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Beruke Games",
         productName: "Stick Slasher",
         productVersion: "1.0",

@@ -106,7 +106,7 @@
         dataUrl: "Build/ab8dd356a41a2943639294657a0990f8.data",
         frameworkUrl: "Build/91a2bfcec140bc524100478b99a4f6d7.framework.js",
         codeUrl: "Build/7db022abd161455e3cc5f207e75d294b.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "BuildNow GG",
         productName: "BuildNow GG",
         productVersion: "1.0.0"

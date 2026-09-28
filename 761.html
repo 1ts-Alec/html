@@ -96,7 +96,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/FISH.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "dmcaguy",
         productName: "FISH",
         productVersion: "2.0",

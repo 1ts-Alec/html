@@ -103,7 +103,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/GASH.framework.js",
         codeUrl: buildUrl + "/GASH.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "DaveAnimaNotSpookyGames!",
         productName: "Gabriel's Awesome Schoolhouse",
         productVersion: "3.3",

@@ -59,7 +59,7 @@
         dataUrl:            buildUrl + "/fatty.data",        
         frameworkUrl:       buildUrl + "/fatty.framework.js", 
         codeUrl:            buildUrl + "/fatty.wasm",         
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName:        "Zakaria",
         productName:        "UvuvwevwevweOnyetenvewv",
         productVersion:     "1.0.1",

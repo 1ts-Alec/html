@@ -106,7 +106,7 @@
         dataUrl: "Build/d6196d9e7e24cad95dbebb16bd2abf9e.data",
         frameworkUrl: "Build/c6dbb99e3975a385006f9a459f2d5545.js",
         codeUrl: "Build/b4633c2f590de062fe81d8827d7cde3a.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Toy Rider",
         productName: "Toy Rider",
         productVersion: "1.0.0"

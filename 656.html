@@ -77,7 +77,7 @@
       dataUrl: buildUrl + "/New folder.data",
       frameworkUrl: buildUrl + "/New folder.framework.js",
       codeUrl: buildUrl + "/New folder.wasm",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Hammergames",
       productName: "Rogue Sergeant The Final Operation",
       productVersion: "1.0",

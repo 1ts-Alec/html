@@ -62,7 +62,7 @@
       dataUrl: buildUrl + "/WebBuild.data.br",
       frameworkUrl: buildUrl + "/WebBuild.framework.js",
       codeUrl: buildUrl + "/WebBuild.wasm.br",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Last Breath Entertainment",
       productName: "Five Nights at Last Breath",
       productVersion: "1.7",

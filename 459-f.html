@@ -85,7 +85,7 @@ function getParts(file, start, end) {
                 dataUrl: dataUrl,
                 frameworkUrl: "Build/build.framework.js",
                 codeUrl: wasmurl,
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "Zed_Technician",
                 productName: "TheManFromTheWindow",
                 productVersion: "0.9921",

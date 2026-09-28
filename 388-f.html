@@ -58,7 +58,7 @@
             dataUrl: buildUrl + "/EvolvingBombs.data.unityweb",
             frameworkUrl: buildUrl + "/EvolvingBombs.framework.js.unityweb",
             codeUrl: buildUrl + "/EvolvingBombs.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Butcher's Games",
             productName: "Evolving Bomb",
             productVersion: "1.0"

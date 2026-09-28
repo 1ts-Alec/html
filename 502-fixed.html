@@ -53,7 +53,7 @@
             dataUrl: mergedDataUrl,
             frameworkUrl: BASE_URL + "StickWithItPort.framework.js",
             codeUrl: mergedWasmUrl,
-            streamingAssetsUrl: "StreamingAssets",
+            streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Trickshot Labs",
             productName: "Stick With It",
             productVersion: "0.1.2"

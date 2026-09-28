@@ -117,7 +117,7 @@
                 dataUrl: dataUrl,
                 frameworkUrl: "Build/WebGL.framework.js",
                 codeUrl: wasmUrl,
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "Basically Games",
                 productName: "Baldi's Basics Classic Remastered",
                 productVersion: "1.1",

@@ -37,7 +37,7 @@
         dataUrl: buildUrl + "/d487c51591d26a3408c9db326b81577b.data.br",
         frameworkUrl: buildUrl + "/f38810975df3c3592ec3159f4f769da8.js",
         codeUrl: buildUrl + "/b8d7ec9f26d230dd840bc9156037ef05.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Estoty",
         productName: "Turbo Stars",
         productVersion: "1.0.0",

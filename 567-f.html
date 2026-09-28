@@ -118,7 +118,7 @@
         dataUrl: "Build/a58f65d7e321afe555338f8f736ca3fc.data",
         frameworkUrl: "Build/d29c452f6e3c527bff86fb76dc52dea4.js",
         codeUrl: "Build/ff9dea288687234e8613ffdc18a1806f.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Highway Racer",
         productName: "Highway Racer",
         productVersion: "1.0.0"

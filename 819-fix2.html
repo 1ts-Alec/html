@@ -126,7 +126,7 @@ var loadingText = document.querySelector("#loading-text");
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/20minutes.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Flanne",
         productName: "MinutesTillDawn",
         productVersion: "0.6.6",

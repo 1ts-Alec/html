@@ -38,7 +38,7 @@
         dataUrl: buildUrl + "/24af8e230d4b39a588eed98fd7c97997.data.br",
         frameworkUrl: buildUrl + "/ac7cde0406281967cab2ece3e099e769.js",
         codeUrl: buildUrl + "/c8d72698ca65169f91d16efee609f484.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "EasyGames",
         productName: "Race Master",
         productVersion: "1.0.0",

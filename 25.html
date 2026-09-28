@@ -71,7 +71,7 @@
       dataUrl: buildUrl + "/BasketBattleWeb.data.unityweb",
       frameworkUrl: buildUrl + "/BasketBattleWeb.framework.js.unityweb",
         codeUrl: buildUrl + "/BasketBattleWeb.wasm.unityweb",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Noor Creative, LLC",
       productName: "Basket Battle",
       productVersion: "3.4",

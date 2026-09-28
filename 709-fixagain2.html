@@ -120,7 +120,7 @@
         dataUrl: dataUrl,
         frameworkUrl: "Build/c38019a83ea4c8d041a01438387f1e7e.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "madkidgames.com",
         productName: "Survivor.io",
         productVersion: "1.0",

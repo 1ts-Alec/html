@@ -105,7 +105,7 @@
         dataUrl: "Build/5339d669eb849446a68aba9a48d61098.data",
         frameworkUrl: "Build/9f98a295b940d80834f1bfc1792d2663.framework.js",
         codeUrl: "Build/8e12edaf08bc00cba646a7df97480baf.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Stone Grass: Mowing Simulator",
         productName: "Stone Grass: Mowing Simulator",
         productVersion: "1.0.0"

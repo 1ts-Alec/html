@@ -321,7 +321,7 @@
                 dataUrl: dataUrl,
                 frameworkUrl: buildUrl + "/framework.js",
                 codeUrl: buildUrl + "/nsoweather2.wasm.unityweb",
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "WSS playground",
                 productName: "Windose",
                 productVersion: "1.4.0",

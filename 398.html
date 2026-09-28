@@ -58,7 +58,7 @@
             dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/makeover-run/Build/MakeOverRun.data",
             frameworkUrl: buildUrl + "/MakeOverRun.framework.js",
             codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/makeover-run/Build/MakeOverRun.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "MakeOverRun",
             productName: "MakeOverRun",
             productVersion: "1.0"

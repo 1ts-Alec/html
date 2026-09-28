@@ -58,7 +58,7 @@
             dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/giant-wanted/Build/1eb373845d6855a1c77899b98367c671.data",
             frameworkUrl: buildUrl + "/17b55d1fae10a27a151df7de1a254a5d.framework.js",
             codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/giant-wanted/Build/9faca01400f10667018e26f5c8ab1473.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "GaintWanted",
             productVersion: "0.1"

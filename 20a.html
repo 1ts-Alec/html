@@ -48,7 +48,7 @@
       dataUrl: buildUrl + "/TallManRun_1.0.20.data",
       frameworkUrl: buildUrl + "/TallManRun_1.0.20.framework.js",
         codeUrl: buildUrl + "/TallManRun_1.0.20.wasm",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "VectorUp Games",
       productName: "Tall Man Run",
       productVersion: "1.45",

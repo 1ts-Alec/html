@@ -70,7 +70,7 @@
       dataUrl: buildUrl + "/BridgeRace.data.unityweb",
       frameworkUrl: buildUrl + "/BridgeRace.framework.js.unityweb",
         codeUrl: buildUrl + "/BridgeRace.wasm.unityweb",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Garawell",
       productName: "Bridge Race",
       productVersion: "3.21",

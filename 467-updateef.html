@@ -118,7 +118,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/BaldiPlusNew.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Basically Games",
         productName: "Baldi's Basics Plus",
         productVersion: "0.12.2a",

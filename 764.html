@@ -40,7 +40,7 @@
         dataUrl: "",
         frameworkUrl: baseUrl + "SREK.framework.js.unityweb",
         codeUrl: baseUrl + "SREK.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Evony Games",
         productName: "Five Nights at Shreks Hotel",
         productVersion: "0.1",

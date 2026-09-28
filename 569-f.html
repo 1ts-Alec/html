@@ -106,7 +106,7 @@
         dataUrl: "Build/3b7c44b52cc1c93ff3d3802e1f027902.data",
         frameworkUrl: "Build/c617abde76565240b6b29bc68434f6d6.js",
         codeUrl: "Build/d15eb8d427381d39a8e665327cb0f643.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Hula Hoop Race",
         productName: "Hula Hoop Race",
         productVersion: "1.0.0"

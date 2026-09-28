@@ -16,7 +16,7 @@
         dataUrl: "Build/Web.data",
         frameworkUrl: "Build/Web.framework.js",
         codeUrl: "Build/Web.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "5x Train LLC",
         productName: "LD47",
         productVersion: "1.0",

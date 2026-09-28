@@ -98,7 +98,7 @@ var loadingText = document.querySelector("#loading-text");
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/LaMadriguera.framework.js",
         codeUrl: buildUrl + "/LaMadriguera.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Camilo Hernández",
         productName: "La Madriguera",
         productVersion: "0.1",

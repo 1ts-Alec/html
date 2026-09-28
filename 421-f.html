@@ -37,7 +37,7 @@
             dataUrl: buildUrl + "/1d8ea7a38a240d7f124778c648a19383.data.unityweb",
             frameworkUrl: buildUrl + "/9d098d8dd479da12d8e9765e1efa9bef.js.unityweb",
             codeUrl: buildUrl + "/a59dad776e3d74b18e75e5548b483387.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "RunRich",
             productVersion: "0.4",

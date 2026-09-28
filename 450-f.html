@@ -123,7 +123,7 @@
                 dataUrl: dataUrl,
                 frameworkUrl: buildUrl + "/Build.framework.js",
                 codeUrl: wasmUrl,
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "MangledMaw",
                 productName: "Amanda The Adventurer",
                 productVersion: "1.6.17b",

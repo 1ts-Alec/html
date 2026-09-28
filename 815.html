@@ -123,7 +123,7 @@
             dataUrl: dataUrl,
             frameworkUrl: buildUrl + "/HTML.framework.js.unityweb",
             codeUrl: wasmUrl,
-            streamingAssetsUrl: "StreamingAssets",
+            streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "SmashGames",
             productName: "Kindergarten2",
             productVersion: "2.00",

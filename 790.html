@@ -144,7 +144,7 @@ var config = {
 dataUrl: dataBlob,
 frameworkUrl: base + "webgl.framework.js",
 codeUrl: wasmBlob,
-streamingAssetsUrl: "StreamingAssets",
+streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
 companyName: "vanripper",
 productName: "Helltaker",
 productVersion: "ex1.1",

@@ -37,7 +37,7 @@
             dataUrl: buildUrl + "/SR3D_WebGL.data.unityweb",
             frameworkUrl: buildUrl + "/SR3D_WebGL.framework.js.unityweb",
             codeUrl: buildUrl + "/SR3D_WebGL.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Butcher’s Games ",
             productName: "Telekinesis Master",
             productVersion: "2",

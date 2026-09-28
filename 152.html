@@ -71,7 +71,7 @@
       dataUrl: buildUrl + "/DrawTheLine2.data.unityweb",
       frameworkUrl: buildUrl + "/DrawTheLine2.framework.js.unityweb",
         codeUrl: buildUrl + "/DrawTheLine2.wasm.unityweb",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "NFriendsGamesIncubator",
       productName: "Draw The Line 3D",
       productVersion: "4.2",

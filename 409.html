@@ -37,7 +37,7 @@
             dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/telekinesis-attack/Build/TelekinesisQuest.data",
             frameworkUrl: buildUrl + "/TelekinesisQuest.framework.js",
             codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/telekinesis-attack/Build/TelekinesisQuest.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Coolgames",
             productName: "Telekinesis Quest",
             productVersion: "39",

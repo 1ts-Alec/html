@@ -48,7 +48,7 @@ body { padding: 0; margin: 0; width: 100%!important; height: 100%!important; }
           dataUrl: dataUrl,
           frameworkUrl:"Build.framework.js",
           codeUrl: codeUrl,
-          streamingAssetsUrl: "StreamingAssets",
+          streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
           companyName: "DefaultCompany",
           productName: "SpiderDoll",
           productVersion: "1.0",

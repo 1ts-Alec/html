@@ -118,7 +118,7 @@
         dataUrl: "Build/y8.data",
         frameworkUrl: "Build/y8.framework.js",
         codeUrl: "Build/y8.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Traffic Rider",
         productName: "Traffic Rider",
         productVersion: "1.0.0"

@@ -57,7 +57,7 @@
       dataUrl: buildUrl + "/ColorMatch.data.unityweb",
       frameworkUrl: buildUrl + "/ColorMatch.framework.js.unityweb",
         codeUrl: buildUrl + "/ColorMatch.wasm.unityweb",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Jacob Van Haag",
       productName: "Coloring Match",
       productVersion: "3.9.2",

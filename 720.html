@@ -91,7 +91,7 @@
             dataUrl: mergedDataUrl,
             frameworkUrl: BASE_URL + "Web.framework.js",
             codeUrl: mergedWasmUrl,
-            streamingAssetsUrl: "StreamingAssets",
+            streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Free Lives",
             productName: "Roulette Hero",
             productVersion: "0.1",

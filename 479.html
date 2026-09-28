@@ -89,7 +89,7 @@
           dataUrl: dataUrl,
           frameworkUrl: "Build/fae6a4c5f2715dd8595d836c4b5f9caa.js",
           codeUrl: wasmUrl, 
-          streamingAssetsUrl: "StreamingAssets",
+          streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
           companyName: "NagamiGames",
           productName: "BikeOfHell",
           productVersion: "0.1",

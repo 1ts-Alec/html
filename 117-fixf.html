@@ -171,7 +171,7 @@
         dataUrl: "Build/e4aa851098e3e5d328e4d879078ad6c5.data",
         frameworkUrl: "Build/f3dc87e8bc321dd382fbd3fa53e1091f.framework.js",
         codeUrl: "Build/9adf8a1aafea4c2333e26d66a8b36d56.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Space Waves",
         productName: "Space Waves",
         productVersion: "1.0.0"

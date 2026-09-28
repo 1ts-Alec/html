@@ -100,7 +100,7 @@ var loadingText = document.querySelector("#loading-text");
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/sfsim.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Stef Morojna",
         productName: "Spaceflight Simulator",
         productVersion: "1.6.00.16",

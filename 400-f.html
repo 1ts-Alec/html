@@ -58,7 +58,7 @@
             dataUrl: buildUrl + "/Build.data.unityweb",
             frameworkUrl: buildUrl + "/Build.framework.js.unityweb",
             codeUrl: buildUrl + "/Build.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Pocket Snake",
             productName: "Money Roller",
             productVersion: "0.1"

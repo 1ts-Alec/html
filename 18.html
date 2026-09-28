@@ -48,7 +48,7 @@
       dataUrl: buildUrl + "/Web.data.unityweb",
       frameworkUrl: buildUrl + "/Web.framework.js.unityweb",
         codeUrl: buildUrl + "/Web.wasm.unityweb",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Born2Play",
       productName: "StackyDash",
       productVersion: "4.8.6",

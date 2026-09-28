@@ -37,7 +37,7 @@
         dataUrl: buildUrl + "/0b7f455b59d283525d729ac5aa2fd2ff.data.br",
         frameworkUrl: buildUrl + "/240d6ad20e88a3724e7b596483ebf4b5.js",
         codeUrl: buildUrl + "/a6b676e3da30e3cb2825978173dab48c.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Kadka",
         productName: "ForkNSausage",
         productVersion: "1.0.1",

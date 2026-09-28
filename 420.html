@@ -37,7 +37,7 @@
             dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/wheel-scale/Build/85446075271dafa0cde0a2ad7af9811c.data",
             frameworkUrl: buildUrl + "/efd72036021191efef0de0b3bc786aa5.js",
             codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/wheel-scale/Build/102ccab92b6d4fb4bd159012275b1494.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "butchers-games",
             productName: "wheel-scale",
             productVersion: "0.0.1",

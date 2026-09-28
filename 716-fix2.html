@@ -99,7 +99,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/CloverPit.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Panik Arcade",
         productName: "CloverPit",
         productVersion: "1.3",

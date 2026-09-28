@@ -36,7 +36,7 @@
         dataUrl: "https://raw.githubusercontent.com/1ts-Alec/assets/4637cf9/116/Build/bike.data.unityweb",
         frameworkUrl: buildUrl + "/bike.framework.js.unityweb",
         codeUrl: "https://raw.githubusercontent.com/1ts-Alec/assets/4637cf9/116/Build/bike.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "RHM",
         productName: "MX OffRoad Mountain Bike",
         productVersion: "1",

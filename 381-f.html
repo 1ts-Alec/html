@@ -37,7 +37,7 @@
             dataUrl: buildUrl + "/ClothingShop.data.unityweb",
             frameworkUrl: buildUrl + "/ClothingShop.framework.js.unityweb",
             codeUrl: buildUrl + "/ClothingShop.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "ClothingShop",
             productVersion: "0.1",

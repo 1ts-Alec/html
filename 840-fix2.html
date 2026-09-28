@@ -289,7 +289,7 @@
               dataUrl: dataBlobUrl,
               frameworkUrl: frameworkBlobUrl,
               codeUrl: wasmBlobUrl,
-              streamingAssetsUrl: "StreamingAssets",
+              streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
               companyName: "DefaultCompany",
               productName: "Talking Hippo",
               productVersion: "1.0",

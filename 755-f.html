@@ -127,7 +127,7 @@
             dataUrl: dataUrl,
             frameworkUrl: buildUrl + "/brawl.framework.js",
             codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Fire Games",
             productName: "Brawl 2018",
             productVersion: "1.07"

@@ -58,7 +58,7 @@
             dataUrl: buildUrl + "/Wc9.data.unityweb",
             frameworkUrl: buildUrl + "/Wc9.framework.js.unityweb",
             codeUrl: buildUrl + "/Wc9.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "Wall Crawler",
             productVersion: "0.1"

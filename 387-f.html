@@ -37,7 +37,7 @@
             dataUrl: buildUrl + "/DrawJoustAB.data.unityweb",
             frameworkUrl: buildUrl + "/DrawJoustAB.framework.js.unityweb",
             codeUrl: buildUrl + "/DrawJoustAB.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "DrawJoust",
             productVersion: "0.1",

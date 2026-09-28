@@ -158,7 +158,7 @@
               dataUrl: dataUrl,
               frameworkUrl: frameworkUrl,
               codeUrl: codeUrl,
-              streamingAssetsUrl: "StreamingAssets",
+              streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
               companyName: "Aggro Crab & Landfall",
               productName: "PEAK",
               productVersion: "1.62.a",

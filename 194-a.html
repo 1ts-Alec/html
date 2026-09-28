@@ -109,7 +109,7 @@
         dataUrl: buildUrl + "/pggbog.data",
         frameworkUrl: buildUrl + "/pggbog.framework.js",
         codeUrl: buildUrl + "/pggbog.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Studio Minus",
         productName: "People Playground",
         productVersion: "1",

@@ -71,7 +71,7 @@
       dataUrl: buildUrl + "/YTPlayables.data.gz",
       frameworkUrl: buildUrl + "/YTPlayables.framework.js.gz",
         codeUrl: buildUrl + "/YTPlayables.wasm.gz",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Neron's Brother",
       productName: "Supreme Duelist",
       productVersion: "1.0.14.0109",

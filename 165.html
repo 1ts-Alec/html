@@ -45,7 +45,7 @@
             dataUrl: "https://raw.githubusercontent.com/1ts-Alec/assets/6762056bb393d79a51f0baf29e8f7cc2044a9df5/165/Build/CheeseChompers3DWeb.data.unityweb",
             frameworkUrl: buildUrl + "/CheeseChompers3DWeb.framework.js.unityweb",
             codeUrl: buildUrl + "/CheeseChompers3DWeb.wasm.unityweb",
-            streamingAssetsUrl: "StreamingAssets",
+            streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "CheeseChompers 3D",
             productVersion: "0.1",

@@ -133,7 +133,7 @@
         dataUrl: dataUrl,
         frameworkUrl: "Build/daddyreeyuki.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Joe Williams",
         productName: "WhosYourDaddy",
         productVersion: "1.0",

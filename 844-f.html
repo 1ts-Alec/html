@@ -157,7 +157,7 @@
         dataUrl: mergedMap["29e3d3c8908bb566507cd8b1b3560e15.data"],
         frameworkUrl: mergedMap["01288fb2e5f57e194e52e16f7bed4cd4.framework.js"],
         codeUrl: mergedMap["0c2c310b28788b93284ef8d4d4fc6791.wasm"],
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Hammer 2",
         productName: "Hammer 2",
         productVersion: "1.0.0"

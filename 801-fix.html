@@ -121,7 +121,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/TreesHateYou_Web.framework.js.br",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "tykenn games",
         productName: "Trees Hate You",
         productVersion: "0.1.0",

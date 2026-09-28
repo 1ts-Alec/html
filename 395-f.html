@@ -37,7 +37,7 @@
             dataUrl: buildUrl + "/GunBuild.data.unityweb",
             frameworkUrl: buildUrl + "/GunBuild.framework.js.unityweb",
             codeUrl: buildUrl + "/GunBuild.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "GunBuild",
             productVersion: "0.1",

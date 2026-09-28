@@ -58,7 +58,7 @@
             dataUrl: buildUrl + "/dcdc1e0926252712708982007c126653.data.unityweb",
             frameworkUrl: buildUrl + "/48de42ecaee79dde2775035c448777da.js.unityweb",
             codeUrl: buildUrl + "/60cc508de8ff84ef26bef1a133b9de5e.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Butcher’s Games",
             productName: "Koji Run",
             productVersion: "0.01"

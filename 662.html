@@ -95,7 +95,7 @@
       dataUrl: buildUrl + "/WebGL_16.data.unityweb?" + version,
       frameworkUrl: buildUrl + "/WebGL_16.framework.js.unityweb?" + version,
         codeUrl: buildUrl + "/WebGL_16.wasm.unityweb?" + version,
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Pronetis",
       productName: "Going Balls",
       productVersion: "16",

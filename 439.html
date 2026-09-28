@@ -161,7 +161,7 @@
                 dataUrl: dataBlobUrl,
                 frameworkUrl: "https://raw.esm.sh/gh/1ts-Alec/g@e079e474647ea113968cdc140ca97380be6409af/BANKROBBERY2/Build/BankRobbery2.framework.js.unityweb",
                 codeUrl: "https://raw.esm.sh/gh/1ts-Alec/g@e079e474647ea113968cdc140ca97380be6409af/BANKROBBERY2/Build/BankRobbery2.wasm.unityweb",
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "JustAlien",
                 productName: "BankRobbery2",
                 productVersion: "1.0",

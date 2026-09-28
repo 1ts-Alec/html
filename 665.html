@@ -68,7 +68,7 @@
       dataUrl: "https://raw.githubusercontent.com/1ts-Alec/youtube-playables/764761e3152db2b796a52154825fe15a0f37cc7b/match-triple-3d/Build/mtu.data",
       frameworkUrl: buildUrl + "/mtu.framework.js",
         codeUrl: buildUrl + "/mtu.wasm",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Lihuhu",
       productName: "Match Triple 3D",
       productVersion: "1.0.0",

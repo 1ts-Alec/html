@@ -58,7 +58,7 @@
             dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/flick-goal/Build/FlickGoal.data",
             frameworkUrl: buildUrl + "/FlickGoal.framework.js",
             codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/flick-goal/Build/FlickGoal.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "ChimericalDream",
             productName: "Dodge Asteroids",
             productVersion: "0.11"

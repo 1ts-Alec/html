@@ -118,7 +118,7 @@
         dataUrl: "Build/Layers.data",
         frameworkUrl: "Build/Layers.framework.js",
         codeUrl: "Build/Layers.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Layers Roll",
         productName: "Layers Roll",
         productVersion: "1.0.0"

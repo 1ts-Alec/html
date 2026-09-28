@@ -51,7 +51,7 @@
         dataUrl: "Build/Build.data",
         frameworkUrl: "Build/Build.framework.js",
         codeUrl: "Build/Build.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "twoootwo",
         productName: "Bad Parenting 1",
         productVersion: "1.0",

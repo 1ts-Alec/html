@@ -89,7 +89,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/Swordfight.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Studio-19",
         productName: "Swordfight",
         productVersion: "0.5",

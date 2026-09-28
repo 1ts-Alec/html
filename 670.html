@@ -121,7 +121,7 @@
           dataUrl: dataUrl,
           frameworkUrl: "Build/BALDI.framework.js",
           codeUrl: wasmUrl,
-          streamingAssetsUrl: "StreamingAssets",
+          streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
           companyName: "Unknown",
           productName: "BALDI",
           productVersion: "1.0",

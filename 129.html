@@ -79,7 +79,7 @@
                     dataUrl: "Build/V0.1.data",
                     frameworkUrl: "Build/V0.1.framework.js",
                     codeUrl: mergedUrl,
-                    streamingAssetsUrl: "StreamingAssets",
+                    streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                     companyName: "eli_hoffman",
                     productName: "Flappy Bird Multiplayer",
                     productVersion: "0.1",

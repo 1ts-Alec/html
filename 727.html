@@ -74,7 +74,7 @@
       dataUrl: buildUrl + "/Web.data.br",
       frameworkUrl: buildUrl + "/Web.framework.js",
       codeUrl: buildUrl + "/Web.wasm.br",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "BiznesBear",
       productName: "Dimension incident",
       productVersion: "Release 1.2",

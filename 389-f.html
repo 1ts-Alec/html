@@ -37,7 +37,7 @@
             dataUrl: buildUrl + "/ElementalMaster.data.unityweb",
             frameworkUrl: buildUrl + "/ElementalMaster.framework.js.unityweb",
             codeUrl: buildUrl + "/ElementalMaster.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "ElementalMasters",
             productVersion: "0.1",

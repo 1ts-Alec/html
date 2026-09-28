@@ -117,7 +117,7 @@
           dataUrl: dataUrl,
           frameworkUrl: buildUrl + "/schoolboy-runaway.framework.js",
           codeUrl: wasmUrl,
-          streamingAssetsUrl: "StreamingAssets",
+          streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
           companyName: "Linked Squad",
           productName: "SchoolBoy Runaway",
           productVersion: "0.500",

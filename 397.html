@@ -58,7 +58,7 @@
             dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/make-a-superboat/Build/9224a54f70bb3b24293b76b9b4d45de6.data",
             frameworkUrl: buildUrl + "/e941bf0a998d3351e7ad6b4d899aeb3a.js",
             codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/make-a-superboat/Build/bf493b00e7eab3c078c1a963105b83f4.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "Boat Evolution URP",
             productVersion: "0.1.0"

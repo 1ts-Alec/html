@@ -172,7 +172,7 @@
                 dataUrl: dataUrl,
                 frameworkUrl: buildUrl + "/Granny 2.frameworkx.js",
                 codeUrl: wasmUrl,
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "Awesome",
                 productName: "Granny 2",
                 productVersion: "1.0",

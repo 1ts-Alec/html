@@ -95,7 +95,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/gtagwebR2.framework.js.unityweb",
         codeUrl: buildUrl + "/gtagwebR2.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "boolonx",
         productName: "gorilla tag web",
         productVersion: "1.0",

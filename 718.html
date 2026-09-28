@@ -99,7 +99,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/Untitled Goose Game.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "House House & Bog",
         productName: "Untitled Goose Game",
         productVersion: "0.2",

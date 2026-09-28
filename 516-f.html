@@ -93,7 +93,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/OshiOshiPunch_WebGL.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "EmptyHouseGames",
         productName: "OshiOshiPunch",
         productVersion: "1.0.6.1",

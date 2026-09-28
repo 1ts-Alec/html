@@ -106,7 +106,7 @@
         dataUrl: "Build/PotteryMaster-CrazyGames-3.data",
         frameworkUrl: "Build/PotteryMaster-CrazyGames-3.framework.js",
         codeUrl: "Build/PotteryMaster-CrazyGames-3.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Pottery Master",
         productName: "Pottery Master",
         productVersion: "1.0.0"

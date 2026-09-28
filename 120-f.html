@@ -152,7 +152,7 @@
         dataUrl: "Build/CrazyGames.data",
         frameworkUrl: "Build/CrazyGames.framework.js",
         codeUrl: "Build/CrazyGames.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Fortzone Battle Royale",
         productName: "Fortzone Battle Royale",
         productVersion: "1.0.0"

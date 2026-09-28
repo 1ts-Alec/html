@@ -58,7 +58,7 @@
             dataUrl: buildUrl + "/40d2907bc5905dd14342b9fa497f4063.data",
             frameworkUrl: buildUrl + "/7ab6a9b6a0cc381657b7cfc786bb0387.js",
             codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/robot-invasion/Build/a0629dd4cc583f2b77969153e8880d94.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "CoolGames",
             productName: "HitMaster3D",
             productVersion: "1.0"

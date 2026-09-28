@@ -37,7 +37,7 @@
             dataUrl: buildUrl + "/6533db19447d3cec0a15f4b239e906b9.data.unityweb",
             frameworkUrl: buildUrl + "/e186e56e5ff1b4961d71abf74343017f.js.unityweb",
             codeUrl: buildUrl + "/c07593bc681d3befda05fa882151c9e4.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "HighHeels",
             productVersion: "0.1",

@@ -120,7 +120,7 @@
         dataUrl: dataUrl,
         frameworkUrl: "Build/lethal.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "StellaDev",
         productName: "LETHAL APE",
         productVersion: "0.2"
