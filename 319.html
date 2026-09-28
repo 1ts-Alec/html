@@ -11,7 +11,7 @@
 
     <title>YT Game Wrapper WebGL Template</title>
     <link rel="stylesheet" href="TemplateData/style.css" nonce="eol5W8ECJpVwHhD_bBjBAQ">
-    <script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/ytgame.js" nonce="eol5W8ECJpVwHhD_bBjBAQ">// Load YT Game API code</script>
+    <script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@7cd78cb4a415cecb74734ede3ecc1f31a380102c/ytgame.js" nonce="eol5W8ECJpVwHhD_bBjBAQ">// Load YT Game API code</script>
 
 </head>
 
@@ -183,7 +183,10 @@ function DecompressFile(file, blobMimeType, callback) {
     });
 }
 
-var unityGameInstance = null;
+// The game can call SendMessage (e.g. once save data loads) before createUnityInstance
+// resolves; queue those calls and replay them once the instance exists.
+var pendingUnityMessages = [];
+var unityGameInstance = { SendMessage: function () { pendingUnityMessages.push(arguments); } };
 // Setup the Unity section once zip file is downloaded and decompressed
 function InitUnitySection() {
     var script = document.createElement("script");
@@ -193,6 +196,7 @@ function InitUnitySection() {
             progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
             unityGameInstance = unityInstance;
+            pendingUnityMessages.forEach(function (args) { unityInstance.SendMessage.apply(unityInstance, args); });
             loadingBar.style.display = "none";
         }).catch((message) => {
             console.error(message);
