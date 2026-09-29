@@ -1,7 +1,7 @@
 
 <!doctype html>
 <html lang="en">
-        <base href="https://raw.esm.sh/gh/1ts-Alec/biologyexams@acfea3c40aaf3f2d64b32691bb93c6c93c69796a/dan-the-man/">
+        <base href="https://raw.esm.sh/gh/1ts-Alec/biologyexams@40ac101fa73adba34703b10bca77dfe6a1abeec7/dan-the-man/">
 <script>
 window.gnMathIsTheBestGameSiteEver = {
     "ancestorOrigins": {},
@@ -194,7 +194,8 @@ window.gnMathIsTheBestGameSiteEver = {
 	</script>
   <script id="engine-start" type="text/javascript">
 		EngineLoader.load("canvas", "DanTheManDefold");
-		runningFromFileWarning.parentNode.removeChild(runningFromFileWarning);
+		var runningFromFileWarning = document.getElementById('running-from-file-warning');
+		if (runningFromFileWarning) runningFromFileWarning.parentNode.removeChild(runningFromFileWarning);
 	</script>
  
 </body>
