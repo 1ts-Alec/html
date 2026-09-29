@@ -6,7 +6,7 @@
 <html lang="en-us">
 
 <head>
-  <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@c5eefc5c13316b94c58e63cb5270b99a13c88fea/solar-smash/">
+  <base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@c5eefc5c13316b94c58e63cb5270b99a13c88fea/solar-smash/">
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 
   <title>YT Game Wrapper WebGL Template</title>
   <link rel="stylesheet" href="TemplateData/style.css" nonce="we8ZPMAc10sjbMeA8f_pRw">
-  <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@764761e3152db2b796a52154825fe15a0f37cc7b/ytgame.js" nonce="we8ZPMAc10sjbMeA8f_pRw">// Load YT Game API code</script>
+  <script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@7cd78cb4a415cecb74734ede3ecc1f31a380102c/ytgame.js" nonce="we8ZPMAc10sjbMeA8f_pRw">// Load YT Game API code</script>
 
 </head>
 
@@ -282,7 +282,7 @@ Unarchiver.loadedFormats = {};
       dataUrl: buildUrl + "/Build.data",
       frameworkUrl: buildUrl + "/Build.framework.js",
         codeUrl: buildUrl + "/Build.wasm",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Paradyme Games",
       productName: "Live - Solar Smash YouTube",
       productVersion: "0.1.0",
@@ -433,7 +433,10 @@ Unarchiver.loadedFormats = {};
       });
     }
 
-    var unityGameInstance = null;
+    // The game can call SendMessage (e.g. once save data loads) before createUnityInstance
+    // resolves; queue those calls and replay them once the instance exists.
+    var pendingUnityMessages = [];
+    var unityGameInstance = { SendMessage: function () { pendingUnityMessages.push(arguments); } };
     // Setup the Unity section once zip file is downloaded and decompressed
     function InitUnitySection() {
       var script = document.createElement("script");
@@ -443,6 +446,7 @@ Unarchiver.loadedFormats = {};
           progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
             unityGameInstance = unityInstance;
+            pendingUnityMessages.forEach(function (args) { unityInstance.SendMessage.apply(unityInstance, args); });
             loadingBar.style.display = "none";
           }).catch((message) => {
             console.error(message);
@@ -455,10 +459,10 @@ const originalFetch = window.fetch;
 
 window.fetch = function(input, options) {
     if (typeof input === 'string' && input.endsWith("AssetBundles/WebGL/planets")) {
-        input = 'https://raw.githubusercontent.com/1ts-Alec/youtube-playables/c5eefc5c13316b94c58e63cb5270b99a13c88fea/solar-smash/StreamingAssets/AssetBundles/WebGL/planets';
+        input = 'https://raw.esm.sh/gh/1ts-Alec/youtube-playables@c5eefc5c13316b94c58e63cb5270b99a13c88fea/solar-smash/StreamingAssets/AssetBundles/WebGL/planets';
         return originalFetch(input, options);
     } else if (typeof input === 'string' && input.endsWith("AssetBundles/WebGL/planets2")) {
-        input = 'https://raw.githubusercontent.com/1ts-Alec/youtube-playables/c5eefc5c13316b94c58e63cb5270b99a13c88fea/solar-smash/StreamingAssets/AssetBundles/WebGL/planets2';
+        input = 'https://raw.esm.sh/gh/1ts-Alec/youtube-playables@c5eefc5c13316b94c58e63cb5270b99a13c88fea/solar-smash/StreamingAssets/AssetBundles/WebGL/planets2';
         return originalFetch(input, options);
     }
 

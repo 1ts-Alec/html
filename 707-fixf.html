@@ -3,7 +3,7 @@
 <html lang="en-us">
 
 <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/traffic-racer@9d32bf76916519d1d731558c228cb062d5afcf2d/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/traffic-racer@9d32bf76916519d1d731558c228cb062d5afcf2d/">
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>traffic racer</title>
@@ -120,7 +120,7 @@
         dataUrl: dataUrl,
         frameworkUrl: "Build/97bcf5a3640d35b4615548522a7c02fa.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "madkidgames.com",
         productName: "Traffic Racer",
         productVersion: "1.0",

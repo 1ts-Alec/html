@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/game-inside-game/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/game-inside-game/">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -35,7 +35,7 @@
       dataUrl: buildUrl + "/webv0_2d.data",
       frameworkUrl: buildUrl + "/webv0_2d.framework.js",
       codeUrl: buildUrl + "/webv0_2d.wasm",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Sam Hogan",
       productName: "Game Inside a Game",
       productVersion: "0.2",

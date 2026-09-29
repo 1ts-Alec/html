@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/gash@2f811e80f6fe649d0dafac7df6599d64e4fee9a3/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/gash@2f811e80f6fe649d0dafac7df6599d64e4fee9a3/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Gabriel's Awesome Schoolhouse</title>
@@ -65,7 +65,7 @@
       );
       const mergedBlob = new Blob(buffers);
       const response = new Response(mergedBlob);
-      await cache.put(cacheKey, response);
+      try { await cache.put(cacheKey, response); } catch (e) { console.warn("cache write skipped:", e); }
       return URL.createObjectURL(mergedBlob);
     }
 
@@ -103,7 +103,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/GASH.framework.js",
         codeUrl: buildUrl + "/GASH.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "DaveAnimaNotSpookyGames!",
         productName: "Gabriel's Awesome Schoolhouse",
         productVersion: "3.3",

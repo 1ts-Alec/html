@@ -5,7 +5,7 @@
 <head>
   
   
-  <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@213d19aad1db5acdebe8e07a80ae4998f3146e33/bridge-race/">
+  <base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@213d19aad1db5acdebe8e07a80ae4998f3146e33/bridge-race/">
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
 
   <title>YT Game Wrapper WebGL Template</title>
   <link rel="stylesheet" href="TemplateData/style.css" nonce="xc9yLMIA-AeOcD4uccnAOg">
-  <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@764761e3152db2b796a52154825fe15a0f37cc7b/ytgame.js" nonce="xc9yLMIA-AeOcD4uccnAOg">// Load YT Game API code</script>
+  <script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@7cd78cb4a415cecb74734ede3ecc1f31a380102c/ytgame.js" nonce="xc9yLMIA-AeOcD4uccnAOg">// Load YT Game API code</script>
 
 </head>
 
@@ -70,7 +70,7 @@
       dataUrl: buildUrl + "/BridgeRace.data.unityweb",
       frameworkUrl: buildUrl + "/BridgeRace.framework.js.unityweb",
         codeUrl: buildUrl + "/BridgeRace.wasm.unityweb",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Garawell",
       productName: "Bridge Race",
       productVersion: "3.21",
@@ -185,7 +185,10 @@
       });
     }
 
-    var unityGameInstance = null;
+    // The game can call SendMessage (e.g. once save data loads) before createUnityInstance
+    // resolves; queue those calls and replay them once the instance exists.
+    var pendingUnityMessages = [];
+    var unityGameInstance = { SendMessage: function () { pendingUnityMessages.push(arguments); } };
     // Setup the Unity section once zip file is downloaded and decompressed
     function InitUnitySection() {
       var script = document.createElement("script");
@@ -195,6 +198,7 @@
           progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
             unityGameInstance = unityInstance;
+            pendingUnityMessages.forEach(function (args) { unityInstance.SendMessage.apply(unityInstance, args); });
             loadingBar.style.display = "none";
           }).catch((message) => {
             console.error(message);

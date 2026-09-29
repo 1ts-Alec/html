@@ -1,7 +1,12 @@
 
 <!DOCTYPE html>
-<html lang="en"><base href="https://cdn.jsdelivr.net/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/smb-remastered/">
+<html lang="en"><base href="https://raw.esm.sh/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/smb-remastered/">
 	<head>
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 		<title>SMB1R</title>
@@ -104,7 +109,7 @@ body {
 
 	</head>
 	<body>
-		<a href="https://cdn.jsdelivr.net/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/smb-remastered/Super%20Mario%20Bros.%20(Europe).nes">
+		<a href="https://raw.esm.sh/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/smb-remastered/Super%20Mario%20Bros.%20(Europe).nes">
 		<button onclick="hideButton(this)", style="position: absolute; z-index: 10; top: 20px;">
     Download ROM
 </button>

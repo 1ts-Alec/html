@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@024ae0558e0d17cefb5784ea5a11dda704b7022f/pixel-gun-survival/">
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@56fcf11df443c36ca52b29437ab1859af4e90af0/no-ads.js"></script>
+    <base href="https://raw.esm.sh/gh/1ts-Alec/assets@024ae0558e0d17cefb5784ea5a11dda704b7022f/pixel-gun-survival/">
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Pixel Gun Survival</title>
@@ -31,10 +32,10 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/Shooting.loader.js";
       var config = {
-        dataUrl: "https://raw.githubusercontent.com/1ts-Alec/assets/1a5ab2c4564c518ff537ac9f30d39c6ade9beb6f/pixel-gun-survival/Build/Shooting.data.unityweb",
+        dataUrl: "https://raw.esm.sh/gh/1ts-Alec/assets@1a5ab2c4564c518ff537ac9f30d39c6ade9beb6f/pixel-gun-survival/Build/Shooting.data.unityweb",
         frameworkUrl: buildUrl + "/Shooting.framework.js.unityweb",
-        codeUrl: "https://raw.githubusercontent.com/1ts-Alec/assets/1a5ab2c4564c518ff537ac9f30d39c6ade9beb6f/pixel-gun-survival/Build/Shooting.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        codeUrl: "https://raw.esm.sh/gh/1ts-Alec/assets@1a5ab2c4564c518ff537ac9f30d39c6ade9beb6f/pixel-gun-survival/Build/Shooting.wasm.unityweb",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Mentolatux",
         productName: "Pixel Gun Survival",
         productVersion: "3",

@@ -2,7 +2,31 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/google-class@60509e8164a239d3285f7700518d7b5c6a396cb8/bart-blast/">
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+// The game checks its version at raw.githubusercontent.com; fetch the same file through esm.sh.
+(function () {
+  function toEsm(url) {
+    var m = typeof url === 'string' && url.match(/^\s*https:\/\/raw\.githubusercontent\.com(?::443)?\/([^/]+)\/([^/]+)\/(?:refs\/heads\/)?([^/]+)\/([\s\S]*)$/);
+    return m ? 'https://raw.esm.sh/gh/' + m[1] + '/' + m[2] + '@' + m[3] + '/' + m[4] : url;
+  }
+  var fetch0 = window.fetch;
+  window.fetch = function (input, init) {
+    if (input instanceof URL) input = input.href;
+    if (typeof input === 'string') input = toEsm(input);
+    else if (input && input.url && toEsm(input.url) !== input.url) input = new Request(toEsm(input.url), input);
+    return fetch0.call(this, input, init);
+  };
+  var open0 = XMLHttpRequest.prototype.open;
+  XMLHttpRequest.prototype.open = function (method, url) {
+    arguments[1] = toEsm(String(url));
+    return open0.apply(this, arguments);
+  };
+})();
+</script>
+		<base href="https://raw.esm.sh/gh/1ts-Alec/google-class@60509e8164a239d3285f7700518d7b5c6a396cb8/bart-blast/">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 		<title>BART BLAST (INDEV VERSION)</title>

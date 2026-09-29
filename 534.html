@@ -2,10 +2,26 @@
 <!DOCTYPE html>
 <html manifest="offline.appcache">
 <head>
+<script>
+// Game images are served from raw.esm.sh; request them with CORS so WebGL can use them as textures
+// (the engine creates some images without setting crossOrigin).
+(function () {
+  var d = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src');
+  Object.defineProperty(HTMLImageElement.prototype, 'src', {
+    configurable: true, enumerable: d.enumerable, get: d.get,
+    set: function (v) {
+      try {
+        if (this.crossOrigin === null && new URL(String(v), document.baseURI).hostname === 'raw.esm.sh') this.crossOrigin = 'anonymous';
+      } catch (e) {}
+      d.set.call(this, v);
+    }
+  });
+})();
+</script>
     <meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>TTG</title>
-	    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/whatver@dafc430d72b1012b6d3ab2d0cf6426a7c1a4d4ff/jumpjousts/">
+	    <base href="https://raw.esm.sh/gh/1ts-Alec/whatver@dafc430d72b1012b6d3ab2d0cf6426a7c1a4d4ff/jumpjousts/">
 	<!-- Standardised web app manifest -->
 	
 	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/bit-gun-io/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/bit-gun-io/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -106,7 +106,7 @@
         dataUrl: "Build/3ae170f9d395b548fa307a66f21ebe76.data",
         frameworkUrl: "Build/bea9fc514d9cf8693efadf381e76c86b.framework.js",
         codeUrl: "Build/9beab804395830ecf57a828380aefc6a.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Bit Gun.io",
         productName: "Bit Gun.io",
         productVersion: "1.0.0"

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/tabs@f03af105ef2a57a6a7c6ccf1831c95da3327c6f0/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/tabs@f03af105ef2a57a6a7c6ccf1831c95da3327c6f0/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | TABS</title>
@@ -95,7 +95,7 @@ var loadingText = document.querySelector("#loading-text");
       );
       const mergedBlob = new Blob(buffers);
       const response = new Response(mergedBlob);
-      await cache.put(cacheKey, response);
+      try { await cache.put(cacheKey, response); } catch (e) { console.warn("cache write skipped:", e); }
       return URL.createObjectURL(mergedBlob);
     }
 

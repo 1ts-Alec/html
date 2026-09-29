@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/shovel-3d/">
+<!-- The game build calls window.Crazygames (the old CrazyGames SDK), which nothing here defines; load the no-op SDK. -->
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@4db04579bd5926d650de3115898429bfbf26e712/crazygames-sdk.js"></script>
+    <base href="https://raw.esm.sh/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/shovel-3d/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -106,7 +108,7 @@
         dataUrl: "Build/ea1d25928a6682907fdfdf7468f7aaed.data",
         frameworkUrl: "Build/819282df40eb1b8359f5acac070b4fd0.js",
         codeUrl: "Build/5e3b873a2d5133d746cae7bb79c2ce27.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Shovel 3D",
         productName: "Shovel 3D",
         productVersion: "1.0.0"

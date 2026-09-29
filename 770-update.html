@@ -2,7 +2,7 @@
 	<html lang=en>
 
 	<head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/srb2@f6702b8f077bf7b23a8e40cbbb6c18d4fe061cf8/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/srb2@f6702b8f077bf7b23a8e40cbbb6c18d4fe061cf8/">
 		<meta charset=utf-8>
 		<link rel="canonical" href="https://kbhgames.com/game/sonic-robo-blast-2">
 		<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name=viewport>
@@ -323,7 +323,7 @@ var loadingText = document.querySelector("#loading-text");
       );
       const mergedBlob = new Blob(buffers);
       const response = new Response(mergedBlob);
-      await cache.put(cacheKey, response);
+      try { await cache.put(cacheKey, response); } catch (e) { console.warn("cache write skipped:", e); }
       return URL.createObjectURL(mergedBlob);
     }
 

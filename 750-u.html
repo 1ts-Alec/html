@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/last-breath-epstein/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/last-breath-epstein/">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -38,7 +38,7 @@
         debug: true
       };  
       </script>
-    <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/merge.js"></script>
+    <script src="https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/merge.js"></script>
   <script>
     var canvas = document.querySelector("#unity-canvas");
       var container = document.querySelector("#unity-container");
@@ -62,7 +62,7 @@
       dataUrl: buildUrl + "/WebBuild.data.br",
       frameworkUrl: buildUrl + "/WebBuild.framework.js",
       codeUrl: buildUrl + "/WebBuild.wasm.br",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Last Breath Entertainment",
       productName: "Five Nights at Last Breath",
       productVersion: "1.7",

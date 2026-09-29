@@ -39,9 +39,6 @@
          }
       
 </style>
-      <script type="text/javascript" async>
-         !function(e,t){a=e.createElement("script"),m=e.getElementsByTagName("script")[0],a.async=1,a.src=t,m.parentNode.insertBefore(a,m)}(document,"https://universal.wgplayer.com/tag/?lh="+window.location.hostname+"&wp="+window.location.pathname+"&ws="+window.location.search);
-      </script>
       <script>
          function SubmitLeaderboardScore(newScore){}
          function GetLeaderboardEntries(){}
@@ -197,14 +194,14 @@
    <body>
       <div id="gameContainer">
          <canvas id="unity-canvas" data-pixel-art=""></canvas>
-         <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@c8207b769940d128480c318e32b5d366a665db5b/highway%20racer%202/Build/game.loader.js"></script>
+         <script src="https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@c8207b769940d128480c318e32b5d366a665db5b/highway%20racer%202/Build/game.loader.js"></script>
          <script>
             var canvas = document.querySelector("#unity-canvas");
             var config = {
-            	dataUrl: "https://raw.githubusercontent.com/1ts-Alec/UGS-Assets/c8207b769940d128480c318e32b5d366a665db5b/highway%20racer%202/Build/game.data.unityweb",
-            	frameworkUrl: "https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@c8207b769940d128480c318e32b5d366a665db5b/highway%20racer%202/Build/game.framework.js.unityweb",
-            	codeUrl: "https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@c8207b769940d128480c318e32b5d366a665db5b/highway%20racer%202/Build/game.wasm.unityweb",
-            	streamingAssetsUrl: "StreamingAssets",
+            	dataUrl: "https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@c8207b769940d128480c318e32b5d366a665db5b/highway%20racer%202/Build/game.data.unityweb",
+            	frameworkUrl: "https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@c8207b769940d128480c318e32b5d366a665db5b/highway%20racer%202/Build/game.framework.js.unityweb",
+            	codeUrl: "https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@c8207b769940d128480c318e32b5d366a665db5b/highway%20racer%202/Build/game.wasm.unityweb",
+            	streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             	companyName: "FreezeNova",
             	productName: "Crazy Drifter",
             	productVersion: "0.1",

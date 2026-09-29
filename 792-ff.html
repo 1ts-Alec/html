@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/escape-road-3@ce369b3812532300e39eb549592a040e7d896aa4/">
+	<base href="https://raw.esm.sh/gh/1ts-Alec/escape-road-3@ce369b3812532300e39eb549592a040e7d896aa4/">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" href="game.css">
@@ -118,7 +118,7 @@
       );
       const mergedBlob = new Blob(buffers);
       const response = new Response(mergedBlob);
-      await cache.put(cacheKey, response);
+      try { await cache.put(cacheKey, response); } catch (e) { console.warn("cache write skipped:", e); }
       return URL.createObjectURL(mergedBlob);
     }
 
@@ -141,7 +141,7 @@
 			dataUrl: dataUrl,
 			frameworkUrl: buildUrl + "/escape-road-3-v26041006.framework.js",
 			codeUrl: wasmUrl,
-			streamingAssetsUrl: "StreamingAssets",
+			streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
 			companyName: "ozgames.io",
 			productName: "Escape Road 3",
 			productVersion: "26041006"

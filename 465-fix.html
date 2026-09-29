@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/cuphead@c9ff1b6b16f9d402b78a42fc2200e1c076c0ab6e/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/cuphead@c9ff1b6b16f9d402b78a42fc2200e1c076c0ab6e/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Cuphead</title>
@@ -96,7 +96,7 @@ var loadingText = document.querySelector("#loading-text");
       );
       const mergedBlob = new Blob(buffers);
       const response = new Response(mergedBlob);
-      await cache.put(cacheKey, response);
+      try { await cache.put(cacheKey, response); } catch (e) { console.warn("cache write skipped:", e); }
       return URL.createObjectURL(mergedBlob);
     }
 

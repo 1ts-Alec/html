@@ -1,6 +1,7 @@
 <html lang="en-us">
 <head>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/google-class@60509e8164a239d3285f7700518d7b5c6a396cb8/brawl-3d/">
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@56fcf11df443c36ca52b29437ab1859af4e90af0/no-ads.js"></script>
+<base href="https://raw.esm.sh/gh/1ts-Alec/google-class@60509e8164a239d3285f7700518d7b5c6a396cb8/brawl-3d/">
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
@@ -126,7 +127,7 @@
             dataUrl: dataUrl,
             frameworkUrl: buildUrl + "/brawl.framework.js",
             codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Fire Games",
             productName: "Brawl 2018",
             productVersion: "1.07"

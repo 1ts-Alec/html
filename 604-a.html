@@ -3,8 +3,13 @@
 
 <html lang="en"> 
 	<head>
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
 		<meta charset="utf-8">
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/minesweeper-plus-2.1/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/minesweeper-plus-2.1/">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 		<title>MinesweeperPlus</title>
 		<style>

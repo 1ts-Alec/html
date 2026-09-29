@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@56fcf11df443c36ca52b29437ab1859af4e90af0/no-ads.js"></script>
     <script>
 // Minimal CrazyGames SDK stub (ad APIs unused offline)
 (function(){
@@ -55,7 +56,7 @@
 })();
 </script>
 
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/space-waves/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/space-waves/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -71,13 +72,13 @@
 
     <script>
     async function mergeParts(baseUrl, partCount) {
-      // baseUrl is like "Build/foo.wasm" (relative); fetch parts from raw.githubusercontent (jsDelivr 403 on >20MB)
+      // baseUrl is like "Build/foo.wasm" (relative); fetch parts from raw.esm.sh
       const gameBase = document.querySelector('base')?.href || '';
       // derive game folder from base href
       const m = gameBase.match(/cg-rip@[^/]+\/([^/]+)\//) || gameBase.match(/cg-rip\/[^/]+\/([^/]+)\//);
       const game = m ? m[1] : '';
       const file = baseUrl.replace(/^Build\//,'');
-      const rawRoot = `https://raw.githubusercontent.com/1ts-Alec/cg-rip/151f9126d2ccb6b81dc0f93155e305900d423d5c/${game}/Build/`;
+      const rawRoot = `https://raw.esm.sh/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/${game}/Build/`;
       const parts = [];
       const n = partCount || 99;
       for (let i = 1; i <= n; i++) {
@@ -170,7 +171,7 @@
         dataUrl: "Build/e4aa851098e3e5d328e4d879078ad6c5.data",
         frameworkUrl: "Build/f3dc87e8bc321dd382fbd3fa53e1091f.framework.js",
         codeUrl: "Build/9adf8a1aafea4c2333e26d66a8b36d56.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Space Waves",
         productName: "Space Waves",
         productVersion: "1.0.0"

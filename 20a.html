@@ -6,7 +6,7 @@
   
   
   
-  <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@8b29ce29cd86c8fb4f46fa5b63d3a0f4f32c5d4e/tall-man-run/">
+  <base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@7cd78cb4a415cecb74734ede3ecc1f31a380102c/tall-man-run/">
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 
   <title>YT Game Wrapper WebGL Template</title>
   <link rel="stylesheet" href="TemplateData/style.css" nonce="cTHJ_ULTR6uitQeBe6T1eA">
-  <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@764761e3152db2b796a52154825fe15a0f37cc7b/ytgame.js" nonce="cTHJ_ULTR6uitQeBe6T1eA"></script>
+  <script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@7cd78cb4a415cecb74734ede3ecc1f31a380102c/ytgame.js" nonce="cTHJ_ULTR6uitQeBe6T1eA"></script>
 
 </head>
 
@@ -48,7 +48,7 @@
       dataUrl: buildUrl + "/TallManRun_1.0.20.data",
       frameworkUrl: buildUrl + "/TallManRun_1.0.20.framework.js",
         codeUrl: buildUrl + "/TallManRun_1.0.20.wasm",
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "VectorUp Games",
       productName: "Tall Man Run",
       productVersion: "1.45",
@@ -130,7 +130,10 @@
       });
     }
 
-    var unityGameInstance = null;
+    // The game can call SendMessage (e.g. once save data loads) before createUnityInstance
+    // resolves; queue those calls and replay them once the instance exists.
+    var pendingUnityMessages = [];
+    var unityGameInstance = { SendMessage: function () { pendingUnityMessages.push(arguments); } };
     function InitUnitySection() {
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -139,6 +142,7 @@
           progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
             unityGameInstance = unityInstance;
+            pendingUnityMessages.forEach(function (args) { unityInstance.SendMessage.apply(unityInstance, args); });
             loadingBar.style.display = "none";
           }).catch((message) => {
             console.error(message);

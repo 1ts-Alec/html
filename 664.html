@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
-		<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/tall-io/">
+		<base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/tall-io/">
         <meta charset="utf-8">
-        <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/ytgame.js" nonce="YZNEIDyGV8Af5yPFT-wrkQ"></script>
+        <script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@7cd78cb4a415cecb74734ede3ecc1f31a380102c/ytgame.js" nonce="YZNEIDyGV8Af5yPFT-wrkQ"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Tall.io</title>
         <style>
@@ -119,7 +119,7 @@
                                     dataUrl: 'Build/c4d63660cd6fd58679f7c7badaeaf4d5.data.unityweb',
                                     frameworkUrl: 'Build/ac0c6c160b3d69d259301775985df46e.js.unityweb',
                                     codeUrl: 'Build/9807f30ef1883a044ef76bb92a00d1ca.wasm.unityweb',
-                                    streamingAssetsUrl: 'StreamingAssets',
+                                    streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                                     companyName: 'OrangeB',
                                     productName: 'Tall.io',
                                     productVersion: '1.7',

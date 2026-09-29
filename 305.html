@@ -1,11 +1,11 @@
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/1ts-Alec/Tanuki-Sunset@a5b13b1279016c9bd123f06a4886b5987fa06dc5/TemplateData/style.css">
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/Tanuki-Sunset@a5b13b1279016c9bd123f06a4886b5987fa06dc5/TemplateData/UnityProgress.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/Tanuki-Sunset@a5b13b1279016c9bd123f06a4886b5987fa06dc5/Build/UnityLoader.js"></script>
+<link rel="stylesheet" href="https://raw.esm.sh/gh/1ts-Alec/Tanuki-Sunset@a5b13b1279016c9bd123f06a4886b5987fa06dc5/TemplateData/style.css">
+<script src="https://raw.esm.sh/gh/1ts-Alec/Tanuki-Sunset@a5b13b1279016c9bd123f06a4886b5987fa06dc5/TemplateData/UnityProgress.js"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/Tanuki-Sunset@a5b13b1279016c9bd123f06a4886b5987fa06dc5/Build/UnityLoader.js"></script>
 <script>
 (async function(){
-  const RAW='https://raw.githubusercontent.com/1ts-Alec/Tanuki-Sunset/a5b13b1279016c9bd123f06a4886b5987fa06dc5/Build/';
-  const cfg=await (await fetch('https://cdn.jsdelivr.net/gh/1ts-Alec/Tanuki-Sunset@a5b13b1279016c9bd123f06a4886b5987fa06dc5/Build/WebGL.json')).json();
+  const RAW='https://raw.esm.sh/gh/1ts-Alec/Tanuki-Sunset@a5b13b1279016c9bd123f06a4886b5987fa06dc5/Build/';
+  const cfg=await (await fetch('https://raw.esm.sh/gh/1ts-Alec/Tanuki-Sunset@a5b13b1279016c9bd123f06a4886b5987fa06dc5/Build/WebGL.json')).json();
   for (const k of Object.keys(cfg)) {
     if (typeof cfg[k]==='string' && /\.(unityweb|data|wasm|jsgz)(\?|$)/i.test(cfg[k]) && !/^https?:/i.test(cfg[k])) cfg[k]=RAW+cfg[k];
   }

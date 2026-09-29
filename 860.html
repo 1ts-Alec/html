@@ -2,7 +2,7 @@
 <html lang="en-us"><!-- ######################### HEAD ############################# -->
 
 <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/endacopia@0d32b3028964f14814ffbe4d143ce6fab8203ed6/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/endacopia@0d32b3028964f14814ffbe4d143ce6fab8203ed6/">
     <title>Adventure Game Studio</title>
     <meta charset="utf-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -360,7 +360,7 @@ var loadingText = document.querySelector("#textmsgs");
       );
       const mergedBlob = new Blob(buffers);
       const response = new Response(mergedBlob);
-      await cache.put(cacheKey, response);
+      try { await cache.put(cacheKey, response); } catch (e) { console.warn("cache write skipped:", e); }
       return URL.createObjectURL(mergedBlob);
     }
 

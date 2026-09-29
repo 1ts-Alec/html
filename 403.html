@@ -3,14 +3,14 @@
 
 <html lang="en-us">
 <head>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/robot-invasion/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/robot-invasion/">
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 <link rel="stylesheet" href="./style.css"/>
 <!-- Additional head modules -->
 <!-- Yandex Games SDK -->
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e7aec00d00e1aed3ef63e4364be4bb1a9e45ea62/yandex-sdk.js?lol"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@586764f087a1426c620c13b29c1206f2c5af5e48/yandex-games-stub.js"></script>
 <style>
         /* Убираем выделение по нажатию клавиш */
         canvas:focus {
@@ -57,8 +57,8 @@
         const config = {
             dataUrl: buildUrl + "/40d2907bc5905dd14342b9fa497f4063.data",
             frameworkUrl: buildUrl + "/7ab6a9b6a0cc381657b7cfc786bb0387.js",
-            codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/robot-invasion/Build/a0629dd4cc583f2b77969153e8880d94.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+            codeUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/robot-invasion/Build/a0629dd4cc583f2b77969153e8880d94.wasm",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "CoolGames",
             productName: "HitMaster3D",
             productVersion: "1.0"
@@ -141,6 +141,8 @@
         };
 
         function StartUnityInstance_IfUnloaded() {
+            // The SDK setup can finish before the Unity loader script has loaded; start once it has.
+            if (typeof StartUnityInstance !== 'function') { window.startUnityWhenLoaded = true; return; }
             if (spinner.style.display !== "none")
                 StartUnityInstance();
         }

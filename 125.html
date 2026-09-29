@@ -5,8 +5,8 @@
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Unity WebGL Player | Granny 2</title>
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/TemplateData/favicon.ico"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/TemplateData/styles.css"/>
+    <link rel="shortcut icon" href="https://raw.esm.sh/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/TemplateData/favicon.ico"/>
+    <link rel="stylesheet" href="https://raw.esm.sh/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/TemplateData/styles.css"/>
     <!-- GameMonetize SDK Entegrasyonu -->
     <script type="text/javascript">
         window.SDK_OPTIONS = {
@@ -33,7 +33,7 @@
         };
         (function (a, b, c) {
             var d = a.getElementsByTagName(b)[0];
-            a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "https://cdn.jsdelivr.net/gh/1ts-Alec/sef@39de1112982fc285872b507b2c3fc049e381c13b/sedk.js", d.parentNode.insertBefore(a, d));
+            a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "https://raw.esm.sh/gh/1ts-Alec/sdk@b1695b946b6249783a5383b6e6d6dc365c7dc2c3/sdk.js", d.parentNode.insertBefore(a, d));
         })(document, "script", "gamemonetize-sdk");
     </script>
 
@@ -50,22 +50,6 @@
         <div id="unity-warning"> </div>
     </div>
 
-    <script>
-        YaGames.init().then(ysdk => {
-            console.log('Yandex SDK initialized');
-            window.ysdk = ysdk;
-            initPlayer();
-        });
-
-        var player;
-
-        function initPlayer() {
-            return ysdk.getPlayer({ scopes: false }).then(_player => {
-                player = _player;
-                return player;
-            });
-        }
-    </script>
 
     <script>
         var container = document.querySelector("#unity-container");
@@ -146,17 +130,17 @@
         }
 
         async function initializeGame() {
-            var buildUrl = "https://cdn.jsdelivr.net/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build";
+            var buildUrl = "https://raw.esm.sh/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build";
             var loaderUrl = buildUrl + "/Granny 2.loader.js";
             
             var dataParts = [
-                "https://cdn.jsdelivr.net/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build/Granny 2_part1.data", 
-                "https://cdn.jsdelivr.net/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build/Granny 2_part2.data", 
-                "https://cdn.jsdelivr.net/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build/Granny 2_part3.data"
+                "https://raw.esm.sh/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build/Granny 2_part1.data", 
+                "https://raw.esm.sh/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build/Granny 2_part2.data", 
+                "https://raw.esm.sh/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build/Granny 2_part3.data"
             ];
             var wasmParts = [
-                "https://cdn.jsdelivr.net/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build/Granny 2_part1.wasm", 
-                "https://cdn.jsdelivr.net/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build/Granny 2_part2.wasm"
+                "https://raw.esm.sh/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build/Granny 2_part1.wasm", 
+                "https://raw.esm.sh/gh/1ts-Alec/ngng@e65b3ed3a84d92fde488b33c8768fdb8416c163b/Build/Granny 2_part2.wasm"
             ];
             
             loadingBar.style.display = "block";
@@ -172,7 +156,7 @@
                 dataUrl: dataUrl,
                 frameworkUrl: buildUrl + "/Granny 2.frameworkx.js",
                 codeUrl: wasmUrl,
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "Awesome",
                 productName: "Granny 2",
                 productVersion: "1.0",

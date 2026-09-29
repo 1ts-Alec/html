@@ -3,7 +3,7 @@
 <html lang="en-us">
 
 <head>
-	<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/going-balls/">
+	<base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/going-balls/">
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 
   <title>YT Game Wrapper WebGL Template</title>
   <link rel="stylesheet" href="TemplateData/style.css" nonce="ioIXgYWNcWyfls5Ky9hrxw">
-  <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/ytgame.js" nonce="ioIXgYWNcWyfls5Ky9hrxw">// Load YT Game API code</script>
+  <script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@7cd78cb4a415cecb74734ede3ecc1f31a380102c/ytgame.js" nonce="ioIXgYWNcWyfls5Ky9hrxw">// Load YT Game API code</script>
 
 </head>
 
@@ -62,29 +62,6 @@
       // updateBannerVisibility();
     }
 
-	      const originalFetch = window.fetch;
-		  let urll = ""
-		  try {
-			fetch("https://raw.githubusercontent.com/1ts-Alec/youtube-playables/refs/heads/main/going-balls/StreamingAssets/aa/WebGL/levels_assets_all_c0fee66fd4e827f8587343bcdcc13f1f.bundle");
-			urll = "https://raw.githubusercontent.com/1ts-Alec/youtube-playables/refs/heads/main/going-balls/StreamingAssets/aa/WebGL/levels_assets_all_c0fee66fd4e827f8587343bcdcc13f1f.bundle"
-		  } catch(e) {
-			try {
-				fetch("https://raw.githubusercontent.com/1ts-Alec/youtube-playables/96562534604b2517a192e4fa3638b246adde7bc9/going-balls/StreamingAssets/aa/WebGL/levels_assets_all_c0fee66fd4e827f8587343bcdcc13f1f.bundle");
-				urll = "https://raw.githubusercontent.com/1ts-Alec/youtube-playables/96562534604b2517a192e4fa3638b246adde7bc9/going-balls/StreamingAssets/aa/WebGL/levels_assets_all_c0fee66fd4e827f8587343bcdcc13f1f.bundle"
-			} catch(e) {
-				fetch("https://cdn.statically.io/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/going-balls/StreamingAssets/aa/WebGL/levels_assets_all_c0fee66fd4e827f8587343bcdcc13f1f.bundle")
-				urll = "https://cdn.statically.io/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/going-balls/StreamingAssets/aa/WebGL/levels_assets_all_c0fee66fd4e827f8587343bcdcc13f1f.bundle"
-			}
-		  }
-      window.fetch = async function (...args) {
-          let [url, options] = args;
-          if (typeof url === 'string' && url.includes("levels_assets_all_c0fee66fd4e827f8587343bcdcc13f1f.bundle")) {
-              url = urll;
-          } else if (url instanceof Request && url.url.includes("levels_assets_all_c0fee66fd4e827f8587343bcdcc13f1f.bundle")) {
-              url = new Request(urll, url);
-          }
-          return originalFetch.call(this, url, options);
-      };
 
     var buildUrl = "Build";
     var loaderUrl = buildUrl + "/WebGL_16.loader.js";
@@ -95,7 +72,7 @@
       dataUrl: buildUrl + "/WebGL_16.data.unityweb?" + version,
       frameworkUrl: buildUrl + "/WebGL_16.framework.js.unityweb?" + version,
         codeUrl: buildUrl + "/WebGL_16.wasm.unityweb?" + version,
-      streamingAssetsUrl: "StreamingAssets",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "Pronetis",
       productName: "Going Balls",
       productVersion: "16",
@@ -246,7 +223,10 @@
       });
     }
 
-    var unityGameInstance = null;
+    // The game can call SendMessage (e.g. once save data loads) before createUnityInstance
+    // resolves; queue those calls and replay them once the instance exists.
+    var pendingUnityMessages = [];
+    var unityGameInstance = { SendMessage: function () { pendingUnityMessages.push(arguments); } };
     // Setup the Unity section once zip file is downloaded and decompressed
     function InitUnitySection() {
       var script = document.createElement("script");
@@ -256,6 +236,7 @@
           progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
             unityGameInstance = unityInstance;
+            pendingUnityMessages.forEach(function (args) { unityInstance.SendMessage.apply(unityInstance, args); });
             loadingBar.style.display = "none";
           }).catch((message) => {
             console.error(message);

@@ -3,13 +3,13 @@
 
 <html lang="en-us">
 <head>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/triple-match-3d/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/triple-match-3d/">
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 <link rel="stylesheet" href="./style.css"/>
 <!-- Yandex Games SDK -->
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e7aec00d00e1aed3ef63e4364be4bb1a9e45ea62/yandex-sdk.js?lol"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@586764f087a1426c620c13b29c1206f2c5af5e48/yandex-games-stub.js"></script>
 <style>
         /* Убираем выделение по нажатию клавиш */
         canvas:focus {
@@ -55,10 +55,10 @@
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/Tripple Match 3D.loader.js";
         const config = {
-            dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/triple-match-3d/Build/Tripple%20Match%203D.data",
+            dataUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/triple-match-3d/Build/Tripple%20Match%203D.data",
             frameworkUrl: buildUrl + "/Tripple Match 3D.framework.js",
-            codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/triple-match-3d/Build/Tripple%20Match%203D.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+            codeUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/triple-match-3d/Build/Tripple%20Match%203D.wasm",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Butcher's Games",
             productName: "Tripple Match 3D",
             productVersion: "1.1"
@@ -141,6 +141,8 @@
         };
 
         function StartUnityInstance_IfUnloaded() {
+            // The SDK setup can finish before the Unity loader script has loaded; start once it has.
+            if (typeof StartUnityInstance !== 'function') { window.startUnityWhenLoaded = true; return; }
             if (spinner.style.display !== "none")
                 StartUnityInstance();
         }

@@ -3,14 +3,14 @@
 
 <html lang="en-us">
 <head>
-<base href="https://cdn.jsdelivr.net/gh/axo323lotl-bit/elitecomposite@ac94003d4b6368fc523e95a40e2ac6a4263df263/office-fight/">
+<base href="https://raw.esm.sh/gh/axo323lotl-bit/elitecomposite@ac94003d4b6368fc523e95a40e2ac6a4263df263/office-fight/">
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>Unity WebGL Player | Funny Puzzles</title>
 <link rel="shortcut icon" href="TemplateData/favicon.ico"/>
 <link rel="stylesheet" href="TemplateData/style.css"/>
 <!-- Yandex Games SDK -->
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e7aec00d00e1aed3ef63e4364be4bb1a9e45ea62/yandex-sdk.js?lol"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@586764f087a1426c620c13b29c1206f2c5af5e48/yandex-games-stub.js"></script>
 
 </head>
 <body>
@@ -70,7 +70,7 @@
         dataUrl: buildUrl + "/Builds.data.unityweb",
         frameworkUrl: buildUrl + "/Builds.framework.js.unityweb",
         codeUrl: buildUrl + "/Builds.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Butcher's Games",
         productName: "Office Scuffle",
         productVersion: "14",

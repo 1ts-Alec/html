@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <base href="https://cdn.jsdelivr.net/gh/giorgirick2-gif/game-webports-onawebsite@b3042ae7a56b2ede39ea4b4371b1d0ab3af8828a/deltatraveler/">
+    <base href="https://raw.esm.sh/gh/giorgirick2-gif/game-webports-onawebsite@b3042ae7a56b2ede39ea4b4371b1d0ab3af8828a/deltatraveler/">
     <meta charset="utf-8">
     <title>Unity Web Player | DELTATRAVELER</title>
     <style>
@@ -119,7 +119,7 @@ setInterval(() => {
                 dataUrl: dataUrl,
                 frameworkUrl: "Build/DELTAWEBGL.framework.js.unityweb",
                 codeUrl: wasmUrl,
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "RynoGG",
                 productName: "DELTATRAVELER",
                 productVersion: "3.0.12.0111",

@@ -3,7 +3,7 @@
 <html lang="en-us">
 
 <head>
-  <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/iron-lung@609540cad01c7cad3de44271423305c9a57ac2bd/">
+  <base href="https://raw.esm.sh/gh/1ts-Alec/iron-lung@609540cad01c7cad3de44271423305c9a57ac2bd/">
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>IRON LUNG</title>
@@ -120,7 +120,7 @@
         dataUrl: dataUrl,
         frameworkUrl: "Build/built.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "98Corbins",
         productName: "Iron Lung",
         productVersion: "1.0",

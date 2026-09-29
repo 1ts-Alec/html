@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/useless@1af9de080eb8e49569ef55682ee452f6b7ab1078/rocket-goal/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/useless@1af9de080eb8e49569ef55682ee452f6b7ab1078/rocket-goal/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
@@ -115,7 +115,7 @@
       );
       const mergedBlob = new Blob(buffers);
       const response = new Response(mergedBlob);
-      await cache.put(cacheKey, response);
+      try { await cache.put(cacheKey, response); } catch (e) { console.warn("cache write skipped:", e); }
       return URL.createObjectURL(mergedBlob);
     }
 
@@ -137,7 +137,7 @@
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/6f314fe54fd9b4f06bc4efe696cc6531.framework.js.unityweb",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "PocketHaven",
         productName: "RocketGoal",
         productVersion: "0.3091",

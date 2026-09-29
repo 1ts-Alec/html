@@ -3,7 +3,7 @@
 
 <html lang="en-us">
 <head>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/telekinesis-drive/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/telekinesis-drive/">
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
@@ -11,7 +11,7 @@
 <link rel="shortcut icon" href="TemplateData/favicon.ico"/>
 <link rel="stylesheet" href="TemplateData/style.css"/>
 <!-- Yandex Games SDK -->
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e7aec00d00e1aed3ef63e4364be4bb1a9e45ea62/yandex-sdk.js?lol"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@586764f087a1426c620c13b29c1206f2c5af5e48/yandex-games-stub.js"></script>
 <!-- Additional head modules -->
 
 </head>
@@ -34,10 +34,10 @@
     const buildUrl = "Build";
     const loaderUrl = buildUrl + "/ProRace.loader.js";
     const config = {
-        dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/telekinesis-drive/Build/ProRace.data",
+        dataUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/telekinesis-drive/Build/ProRace.data",
         frameworkUrl: buildUrl + "/ProRace.framework.js",
-        codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/telekinesis-drive/Build/ProRace.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        codeUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/telekinesis-drive/Build/ProRace.wasm",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Cool Games",
         productName: "Force Race",
         productVersion: "32",

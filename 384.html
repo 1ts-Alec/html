@@ -3,7 +3,14 @@
 
 <html lang="en-us">
 <head>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/destiny-run-3d/">
+<script>
+  // Files over raw.esm.sh's ~50MB limit are stored as ~20MB parts next to the original.
+  window.SPLIT_FILES = {
+    'https://raw.esm.sh/gh/1ts-Alec/brainrot@5e095de15c00b19dbb343b2da8a84e5a2fdb5330/destiny-run-3d/Build/a5c5dd552ba58e3db20a39a9a3ab76a7.data': { parts: 4, size: 67515565 }
+  };
+</script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@6bf5d10b62bc12134f4c1a6c43b6b78a3b4f4200/split-files.js"></script>
+<base href="https://raw.esm.sh/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/destiny-run-3d/">
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
@@ -11,7 +18,7 @@
 <link rel="shortcut icon" href="TemplateData/favicon.ico"/>
 <link rel="stylesheet" href="TemplateData/style.css"/>
 <!-- Yandex Games SDK -->
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e7aec00d00e1aed3ef63e4364be4bb1a9e45ea62/yandex-sdk.js?lol"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@586764f087a1426c620c13b29c1206f2c5af5e48/yandex-games-stub.js"></script>
 <!-- Additional head modules -->
 
 </head>
@@ -34,10 +41,10 @@
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/DestinyRun2.loader.js";
         const config = {
-            dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/destiny-run-3d/Build/a5c5dd552ba58e3db20a39a9a3ab76a7.data",
+            dataUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@5e095de15c00b19dbb343b2da8a84e5a2fdb5330/destiny-run-3d/Build/a5c5dd552ba58e3db20a39a9a3ab76a7.data",
             frameworkUrl: buildUrl + "/30855ff717062643589f5d24234d7b1f.js",
-            codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/12bc2b8f9f18640edd88b80a4c1825714d362499/destiny-run-3d/Build/3d207a0c4f9f5eeb628106713e77e05f.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+            codeUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@12bc2b8f9f18640edd88b80a4c1825714d362499/destiny-run-3d/Build/3d207a0c4f9f5eeb628106713e77e05f.wasm",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Butcher’s Games",
             productName: "Runner Template",
             productVersion: "0.01",

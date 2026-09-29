@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/adgac@af2c9445175376a5f9b5d7446e59594571f17e54/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/adgac@af2c9445175376a5f9b5d7446e59594571f17e54/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | A Difficult Game About Climbing</title>
@@ -96,7 +96,7 @@
         dataUrl: dataUrl,
         frameworkUrl: "Build/adgac.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Pontypants",
         productName: "A Difficult Game About Climbing",
         productVersion: "1.2.61",

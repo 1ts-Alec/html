@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/seraph@ae2fcc6d6a9cd051654fcc0519080db1f79cf2a7/games/10minutestilldawn/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/seraph@ae2fcc6d6a9cd051654fcc0519080db1f79cf2a7/games/10minutestilldawn/">
     
     
 
@@ -12,7 +12,7 @@
 
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/seraph@ae2fcc6d6a9cd051654fcc0519080db1f79cf2a7/games/10minutestilldawn/Build/UnityLoader.js"></script>
+    <script src="https://raw.esm.sh/gh/1ts-Alec/seraph@ae2fcc6d6a9cd051654fcc0519080db1f79cf2a7/games/10minutestilldawn/Build/UnityLoader.js"></script>
     <script>
       var gameInstance;
       var scaleToFit;
@@ -23,8 +23,8 @@
       }
 
       (async function(){
-        const RAW='https://raw.githubusercontent.com/1ts-Alec/seraph/ae2fcc6d6a9cd051654fcc0519080db1f79cf2a7/games/10minutestilldawn/Build/';
-        const cfg=await (await fetch('https://cdn.jsdelivr.net/gh/1ts-Alec/seraph@ae2fcc6d6a9cd051654fcc0519080db1f79cf2a7/games/10minutestilldawn/Build/10MinutesTillDawnWebGL.json')).json();
+        const RAW='https://raw.esm.sh/gh/1ts-Alec/seraph@ae2fcc6d6a9cd051654fcc0519080db1f79cf2a7/games/10minutestilldawn/Build/';
+        const cfg=await (await fetch('https://raw.esm.sh/gh/1ts-Alec/seraph@ae2fcc6d6a9cd051654fcc0519080db1f79cf2a7/games/10minutestilldawn/Build/10MinutesTillDawnWebGL.json')).json();
         for (const k of Object.keys(cfg)) {
           if (typeof cfg[k]==='string' && /\.(unityweb|data|wasm|jsgz)(\?|$)/i.test(cfg[k]) && !/^https?:/i.test(cfg[k])) cfg[k]=RAW+cfg[k];
         }

@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml' lang='' xml:lang=''>
 <head>
-	<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e7aec00d00e1aed3ef63e4364be4bb1a9e45ea62/286/">
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
+	<base href="https://raw.esm.sh/gh/1ts-Alec/assets@5b25de9d455000764965668a91f0e9a477431874/286/">
 	<meta charset='utf-8' />
 	<meta name='viewport' content='width=device-width, user-scalable=no' />
 	<title>Endoparasitic</title>
@@ -35,7 +40,7 @@
 	<script type='text/javascript' src='Endoparasitic.js'></script>
 	<script type='text/javascript'>//<![CDATA[
 
-		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"https://raw.githubusercontent.com/1ts-Alec/assets/2a0baec91516e729bf6ed492fda9e34aa19eabb0/286/Endoparasitic","experimentalVK":false,"fileSizes":{"Endoparasitic.pck":129276352,"Endoparasitic.wasm":17867504},"focusCanvas":true,"gdnativeLibs":[]};
+		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"https://raw.esm.sh/gh/1ts-Alec/assets@2a0baec91516e729bf6ed492fda9e34aa19eabb0/286/Endoparasitic","experimentalVK":false,"fileSizes":{"Endoparasitic.pck":129276352,"Endoparasitic.wasm":17867504},"focusCanvas":true,"gdnativeLibs":[]};
 		var engine = new Engine(GODOT_CONFIG);
 
 		window.godotrunfunction = function() {

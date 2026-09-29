@@ -5,8 +5,8 @@
     
     
     
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@f86d947cd3a8c7271fc251ae687bb8c9ffd2a170/turbo-stars/">
-    <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@764761e3152db2b796a52154825fe15a0f37cc7b/ytgame.js" nonce="ADiC7Lh6BgQR28B2CL7NFw"></script>
+    <base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@f86d947cd3a8c7271fc251ae687bb8c9ffd2a170/turbo-stars/">
+    <script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@7cd78cb4a415cecb74734ede3ecc1f31a380102c/ytgame.js" nonce="ADiC7Lh6BgQR28B2CL7NFw"></script>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -37,7 +37,7 @@
         dataUrl: buildUrl + "/d487c51591d26a3408c9db326b81577b.data.br",
         frameworkUrl: buildUrl + "/f38810975df3c3592ec3159f4f769da8.js",
         codeUrl: buildUrl + "/b8d7ec9f26d230dd840bc9156037ef05.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Estoty",
         productName: "Turbo Stars",
         productVersion: "1.0.0",

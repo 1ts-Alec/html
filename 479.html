@@ -1,5 +1,5 @@
 
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@e4eef50361d9e575bc7cd834e14388c6e675a67e/steal%20brainrot/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@e4eef50361d9e575bc7cd834e14388c6e675a67e/steal%20brainrot/">
 <html lang="en-us">
 
 <head>
@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="./style.css" /> 
   <!-- Yandex Games SDK -->
-  <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e7aec00d00e1aed3ef63e4364be4bb1a9e45ea62/yandex-sdk.js?lol"></script>
+  <script src="https://raw.esm.sh/gh/1ts-Alec/assets@586764f087a1426c620c13b29c1206f2c5af5e48/yandex-games-stub.js"></script>
   <style>
     canvas:focus {
       outline: none;
@@ -89,13 +89,13 @@
           dataUrl: dataUrl,
           frameworkUrl: "Build/fae6a4c5f2715dd8595d836c4b5f9caa.js",
           codeUrl: wasmUrl, 
-          streamingAssetsUrl: "StreamingAssets",
+          streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
           companyName: "NagamiGames",
           productName: "BikeOfHell",
           productVersion: "0.1",
         };
         // Ensure StartUnityInstance is called only after config is set
-        if (IsLocalHost() || syncInit) StartUnityInstance_IfUnloaded();
+        if (IsLocalHost() || syncInit || window.startUnityWhenLoaded) StartUnityInstance_IfUnloaded();
     });
 
 
@@ -250,6 +250,8 @@
     };
 
     function StartUnityInstance_IfUnloaded() {
+      // The SDK setup can finish before the Unity loader script has loaded; start once it has.
+      if (typeof StartUnityInstance !== 'function') { window.startUnityWhenLoaded = true; return; }
       if (spinner.style.display !== "none") StartUnityInstance();
     }
 

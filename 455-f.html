@@ -3,7 +3,12 @@
 <html lang="en">
 
 <head>
-	<base href="https://cdn.jsdelivr.net/gh/giorgirick2-gif/game-webports-onawebsite@b3042ae7a56b2ede39ea4b4371b1d0ab3af8828a/bergentruck/">
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
+	<base href="https://raw.esm.sh/gh/giorgirick2-gif/game-webports-onawebsite@b3042ae7a56b2ede39ea4b4371b1d0ab3af8828a/bergentruck/">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 	<title>BERGENTRUCK_201X</title>

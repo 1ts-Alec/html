@@ -3,7 +3,7 @@
 
 <html lang="en-us">
 <head>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/twerk-race-3d/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/twerk-race-3d/">
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
@@ -11,7 +11,7 @@
 <link rel="shortcut icon" href="TemplateData/favicon.ico"/>
 <link rel="stylesheet" href="TemplateData/style.css"/>
 <!-- Yandex Games SDK -->
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e7aec00d00e1aed3ef63e4364be4bb1a9e45ea62/yandex-sdk.js?lol"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@586764f087a1426c620c13b29c1206f2c5af5e48/yandex-games-stub.js"></script>
 <!-- Additional head modules -->
 
 </head>
@@ -34,10 +34,10 @@
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/TwerkRace.loader.js";
         const config = {
-            dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/twerk-race-3d/Build/c86af6680382d4e84064160e72058923.data",
+            dataUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/twerk-race-3d/Build/c86af6680382d4e84064160e72058923.data",
             frameworkUrl: buildUrl + "/ae9cb1252b1485f36c41624a1137c5db.js",
-            codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/twerk-race-3d/Build/8bd8d556a1c0e4a44c62c319f83458a9.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+            codeUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/twerk-race-3d/Build/8bd8d556a1c0e4a44c62c319f83458a9.wasm",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Butcher’s Games",
             productName: "Runner Template",
             productVersion: "0.01",

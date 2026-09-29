@@ -3,7 +3,7 @@
 <html lang="en-us">
 
 <head>
-  <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/survivor@2786d321316c08c722d684a4b34ac9a5b3527605/">
+  <base href="https://raw.esm.sh/gh/1ts-Alec/survivor@2786d321316c08c722d684a4b34ac9a5b3527605/">
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>survivor.io</title>
@@ -120,7 +120,7 @@
         dataUrl: dataUrl,
         frameworkUrl: "Build/c38019a83ea4c8d041a01438387f1e7e.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "madkidgames.com",
         productName: "Survivor.io",
         productVersion: "1.0",

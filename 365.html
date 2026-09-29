@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/bulbasaurchat.github.io@de2858a9fa7b7176cee2788842d4278686969811/games/justfalllol/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/bulbasaurchat.github.io@de2858a9fa7b7176cee2788842d4278686969811/games/justfalllol/">
     <meta charset="utf-8" />
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,42 +16,16 @@
       });
     </script>
     <script src="mobileRedirect.js"></script>
-    <!-- Rise SDK -->
-    <script src="hb.loader.js"></script>
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
 
     <link rel="stylesheet" href="style.css" />
-    <!-- ZONETAG - PLACE INTO HEAD SECTION OR RUN CODE AT STARTUP -->
+    <!-- CPMStar ad tag removed; keep its API answering "no ad" -->
+    <script>window.cpmstarAPI = function (o) { o && typeof o === "object" && o.fail && o.fail(); };</script>
+    <!-- Rise video-ad SDK removed: tell the game every ad request had no fill -->
     <script>
-      (function (zonefile) {
-        var y = "cpmstarx";
-        var drutObj = (window[y] = window[y] || {});
-        function failCpmstarAPI() {
-          var failFn = function (o) {
-            o && typeof o === "object" && o.fail && o.fail();
-          };
-          drutObj && Array.isArray(drutObj.cmd) && drutObj.cmd.forEach(failFn) && (drutObj.cmd.length = 0);
-          window.cpmstarAPI = window["_" + zonefile] = failFn;
-        }
-        var rnd = Math.round(Math.random() * 999999);
-        var s = document.createElement("script");
-        s.type = "text/javascript";
-        s.async = true;
-        s.onerror = failCpmstarAPI;
-        var proto = document.location.protocol;
-        var host = proto == "https:" || proto == "file:" ? "https://server" : "//cdn";
-        if (window.location.hash == "#cpmstarDev") host = "//dev.server";
-        if (window.location.hash == "#cpmstarStaging") host = "//staging.server";
-        s.src = host + ".cpmstar.com/cached/zonefiles/" + zonefile + ".js?rnd=" + rnd;
-        var s2 = document.getElementsByTagName("script")[0];
-        s2.parentNode.insertBefore(s, s2);
-        window.cpmstarAPI = function (o) {
-          (drutObj.cmd = drutObj.cmd || []).push(o);
-        };
-      })("627_49986_gameapi");
+      function unityAdFinishedCallback(isSuccess) { try { if (gameInstance) gameInstance.SendMessage("AdsManager", "OnWebCallback", isSuccess); } catch (e) { console.log(e); } }
+      function requestNewAd() { unityAdFinishedCallback(0); }
     </script>
-    <!-- MIDROLL/INTERSTITIAL VIDEO API -->
-    <script src="rise.js"></script>
   
 </head>
   <body>
@@ -113,11 +87,7 @@
       function showAds() {
         console.log("show ads");
 
-        document.getElementsByClassName("ad-rectangle-bottom")[0].style.display = "block";
-        document.getElementsByClassName("ad-leaderboard-bottom")[0].style.display = "block";
-        document.getElementById("adRectangleUpper").style.display = "block";
-
-        refresh();
+        // ad boxes stay hidden (ads removed)
       }
 
       function hideAds() {

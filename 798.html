@@ -10,7 +10,7 @@
 
 
 <html lang="en-us">
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/hungry%20lamu/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/hungry%20lamu/">
 <html lang="en-us">
 
 <head>
@@ -65,7 +65,7 @@
         dataUrl: "Build/WebGL.data",
         frameworkUrl: "Build/WebGL.framework.js",
         codeUrl: "Build/WebGL.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Kulu",
         productName: "Hungry Lamu",
         productVersion: "1.0",

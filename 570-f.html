@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/jelly-restaurant/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/jelly-restaurant/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -19,13 +19,13 @@
 
     <script>
     async function mergeParts(baseUrl, partCount) {
-      // baseUrl is like "Build/foo.wasm" (relative); fetch parts from raw.githubusercontent (jsDelivr 403 on >20MB)
+      // baseUrl is like "Build/foo.wasm" (relative); fetch parts from raw.esm.sh
       const gameBase = document.querySelector('base')?.href || '';
       // derive game folder from base href
       const m = gameBase.match(/cg-rip@[^/]+\/([^/]+)\//) || gameBase.match(/cg-rip\/[^/]+\/([^/]+)\//);
       const game = m ? m[1] : '';
       const file = baseUrl.replace(/^Build\//,'');
-      const rawRoot = `https://raw.githubusercontent.com/1ts-Alec/cg-rip/151f9126d2ccb6b81dc0f93155e305900d423d5c/${game}/Build/`;
+      const rawRoot = `https://raw.esm.sh/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/${game}/Build/`;
       const parts = [];
       const n = partCount || 99;
       for (let i = 1; i <= n; i++) {
@@ -118,7 +118,7 @@
         dataUrl: "Build/c2441d974d437e58810e4c3de18c531b.data",
         frameworkUrl: "Build/0c43cc186c4f76ab592b91be35e0431d.js",
         codeUrl: "Build/a89ad6bcc41e0ff7e80d5061f1d4848a.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Jelly Restaurant",
         productName: "Jelly Restaurant",
         productVersion: "1.0.0"

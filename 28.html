@@ -3,8 +3,8 @@
   
   
   
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/basketball-frvr/">
-      <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/ytgame.js" nonce="-sOJ1RQ8_ggBND0jamQKHQ"></script>
+    <base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/basketball-frvr/">
+      <script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@7cd78cb4a415cecb74734ede3ecc1f31a380102c/ytgame.js" nonce="-sOJ1RQ8_ggBND0jamQKHQ"></script>
 
     <script nonce="-sOJ1RQ8_ggBND0jamQKHQ">
      window.__FRVR = window.__FRVR || {};
@@ -1667,7 +1667,9 @@ if(!(window.console && console.log)) {
 
         <div id="overlay"></div>
 
-      <script>window.ga=function(){};</script>
+      <script>window.ga=function(){};
+      // No-op stand-ins for the analytics hooks the game calls (gax) and the removed Google loader (initGoogle).
+      window.gax=function(){};window.initGoogle=function(){};</script>
 
       <script nonce="-sOJ1RQ8_ggBND0jamQKHQ">
 

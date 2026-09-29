@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/hammer-2/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/hammer-2/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -157,7 +157,7 @@
         dataUrl: mergedMap["29e3d3c8908bb566507cd8b1b3560e15.data"],
         frameworkUrl: mergedMap["01288fb2e5f57e194e52e16f7bed4cd4.framework.js"],
         codeUrl: mergedMap["0c2c310b28788b93284ef8d4d4fc6791.wasm"],
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Hammer 2",
         productName: "Hammer 2",
         productVersion: "1.0.0"

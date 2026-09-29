@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en-us">
 <head>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@56fcf11df443c36ca52b29437ab1859af4e90af0/no-ads.js"></script>
+  <base href="https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/tungtung/">
   <meta charset="utf-8" />
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/escaperoad2city/">
   <title>Tung Sahur Horror</title>
   <style>
     html, body { background: #000; width: 100%; height: 100%; overflow: hidden; padding: 0; margin: 0; }
@@ -12,7 +13,9 @@
 </head>
 <body>
 
-  <script id="gmsoft-jssdk" src="gmsoftsdk_v5.js"></script>
+  <!-- The azgames/1games SDK (gmsoftsdk_v5.js) only loads ads and tracking. The game build looks for this
+       script element and reads GMSOFT_OPTIONS, so keep both without the SDK. -->
+  <script id="gmsoft-jssdk" src="data:text/javascript,window.GMSOFT_OPTIONS%3D%7BenableAds%3Afalse%2Callow_play%3A%22yes%22%2Callow_host%3A%22yes%22%2Callow_embed%3A%22yes%22%2Cgame%3Anull%2Cpromotion%3Anull%7D%3B"></script>
 
   <div id="gameContainer" style="display:none;">
     <canvas id="unity-canvas"></canvas>
@@ -32,17 +35,17 @@
     console.log('firebaseSetUserProperties (stubbed):', props);
   }
 </script>
-       //script>
+        <script>
       window.fileMergerConfig = {
         files: [
-          { name: 'escape-road-city-2-v25022604.data.unityweb', parts: 2 },
+          { name: 'tung-sahur-horror-v25051505.data.unityweb', parts: 2 },
         ],
         basePath: 'Build/',
         debug: true
       };
-    script>
+    </script>
 
-    //cript src="https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/merge.js"></script>
+    <script src="https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/merge.js"></script>
   <script>
     var canvas = document.getElementById("unity-canvas");
     var container = document.getElementById("gameContainer");
@@ -50,10 +53,10 @@
 
     var buildUrl = "Build";
     var config = {
-      dataUrl:         buildUrl + "/escape-road-city-2-v25022604.data.unityweb",
-      frameworkUrl:    buildUrl + "/escape-road-city-2-v25022604.framework.js.unityweb",
-      codeUrl:         buildUrl + "/escape-road-city-2-v25022604.wasm.unityweb",
-      streamingAssetsUrl: "StreamingAssets",
+      dataUrl:         buildUrl + "/tung-sahur-horror-v25051505.data.unityweb",
+      frameworkUrl:    buildUrl + "/tung-sahur-horror-v25051505.framework.js.unityweb",
+      codeUrl:         buildUrl + "/tung-sahur-horror-v25051505.wasm.unityweb",
+      streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
       companyName: "azgames.io",
       productName: "Tung Sahur Horror",
       productVersion: "25051505",
@@ -79,7 +82,7 @@
     window.addEventListener("resize", onResize);
 
     var script = document.createElement("script");
-    script.src = buildUrl + "/escape-road-city-2-v25022604.loader.js";
+    script.src = buildUrl + "/tung-sahur-horror-v25051505.loader.js";
     script.onload = function() {
       createUnityInstance(canvas, config, function(progress) {
         document.getElementById("pct").innerText = Math.round(progress * 100) + "%";

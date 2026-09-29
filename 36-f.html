@@ -8,8 +8,12 @@
   
   <meta charset="utf-8">
   <title>Monster Tracks</title>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/1ts-Alec/google-class@23207b238c7c587d12da3cac4233366120ea47c0/monster-tracks/Jump_Gamemonetize.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/1ts-Alec/google-class/monster-tracks/webapp/fancade.css">
+  <script>
+    // Stand-in for the GameMonetize ad SDK: skip every ad and run the game's after-ad callback.
+    var skipAd = function (o) { o && o.beforeShowAd && o.beforeShowAd(); setTimeout(function () { o && o.afterShowAd && o.afterShowAd(); }, 0); };
+    window.JumpGame = { startup: function () {}, showInterstitial: skipAd, showReward: skipAd };
+  </script>
+  <link rel="stylesheet" href="https://raw.esm.sh/gh/1ts-Alec/google-class@d7d263a67e1dd6283aa25feaa6d4e063f5410f5b/monster-tracks/webapp/fancade.css">
 
 </head>
 
@@ -17,7 +21,7 @@
   <div id="canvas_border">
     <div id="play_content" class="middle center">
       <div class="box">
-        <img src="https://cdn.jsdelivr.net/gh/1ts-Alec/google-class/monster-tracks/webapp/cover.jpg" class="cover">
+        <img src="https://raw.esm.sh/gh/1ts-Alec/google-class@d7d263a67e1dd6283aa25feaa6d4e063f5410f5b/monster-tracks/webapp/cover.jpg" class="cover">
         <p class="title">Monster Tracks</p>
         <p class="author">TGC</p>
       </div>
@@ -25,8 +29,8 @@
     </div>
     <canvas class="emscripten" id="canvas" tabindex="-1"></canvas>
   </div>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/1ts-Alec/google-class/monster-tracks/webapp/source_min.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/1ts-Alec/google-class/monster-tracks/webapp/index.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://raw.esm.sh/gh/1ts-Alec/google-class@d7d263a67e1dd6283aa25feaa6d4e063f5410f5b/monster-tracks/webapp/source_min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://raw.esm.sh/gh/1ts-Alec/google-class@d7d263a67e1dd6283aa25feaa6d4e063f5410f5b/monster-tracks/webapp/index.js" crossorigin="anonymous"></script>
 
 
 </body>

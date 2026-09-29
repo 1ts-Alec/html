@@ -2,7 +2,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/sky-riders/">
+<script>
+// The game build injects cg-sdk.js, an older CrazyGames SDK that lacks functions this build calls
+// (and loads CrazyGames ads). Load the no-op SDK instead.
+(function () {
+  var d = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+  Object.defineProperty(HTMLScriptElement.prototype, 'src', {
+    configurable: true, enumerable: d.enumerable, get: d.get,
+    set: function (v) { d.set.call(this, /(^|\/)cg-sdk\.js(\?|$)/.test(String(v)) ? 'https://raw.esm.sh/gh/1ts-Alec/assets@4db04579bd5926d650de3115898429bfbf26e712/crazygames-sdk.js' : v); }
+  });
+})();
+</script>
+    <base href="https://raw.esm.sh/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/sky-riders/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -106,7 +117,7 @@
         dataUrl: "Build/b42f55023bd0c57b3dc159ff0df65857.data",
         frameworkUrl: "Build/5066719154d58ab5ebaa57b6d0fbced3.framework.js",
         codeUrl: "Build/b6a88957bd0da804399c52d3f24e4c48.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Sky Riders",
         productName: "Sky Riders",
         productVersion: "1.0.0"

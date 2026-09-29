@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@84c59f5/200/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/assets@84c59f5/200/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -33,7 +33,7 @@
             dataUrl: buildUrl + "/TimeShooter2_GD.data.unityweb",
             frameworkUrl: buildUrl + "/TimeShooter2_GD.framework.js.unityweb",
             codeUrl: buildUrl + "/TimeShooter2_GD.wasm.unityweb",
-            streamingAssetsUrl: "StreamingAssets",
+            streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "g80g",
             productName: "Time Shooter 2",
             productVersion: "0.1",

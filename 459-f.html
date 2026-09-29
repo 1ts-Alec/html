@@ -3,7 +3,7 @@
 <html lang="en-us">
 
 <head>
-    <base href="https://cdn.jsdelivr.net/gh/giorgirick2-gif/game-webports-onawebsite@b3042ae7a56b2ede39ea4b4371b1d0ab3af8828a/the-man-in-the-window/">
+    <base href="https://raw.esm.sh/gh/giorgirick2-gif/game-webports-onawebsite@b3042ae7a56b2ede39ea4b4371b1d0ab3af8828a/the-man-in-the-window/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | TheManFromTheWindow</title>
@@ -85,7 +85,7 @@ function getParts(file, start, end) {
                 dataUrl: dataUrl,
                 frameworkUrl: "Build/build.framework.js",
                 codeUrl: wasmurl,
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "Zed_Technician",
                 productName: "TheManFromTheWindow",
                 productVersion: "0.9921",

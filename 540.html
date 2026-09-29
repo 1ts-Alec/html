@@ -6,7 +6,20 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="theme-color" content="#000000">
     <title>myTeardrop</title>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/teardrop/play/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/teardrop/play/">
+<script>
+// The game loads "/discount.json" from the site root; that file is at the root of the teardrop repo.
+(function () {
+  var origFetch = window.fetch;
+  window.fetch = function (input, init) {
+    if (typeof input === 'string') {
+      var u = new URL(input, document.baseURI);
+      if (u.origin === 'https://raw.esm.sh' && u.pathname === '/discount.json') input = 'https://raw.esm.sh/gh/1ts-Alec/teardrop/discount.json' + u.search;
+    }
+    return origFetch.call(this, input, init);
+  };
+})();
+</script>
     <meta content="myTeardrop" property="og:title" />
     <meta content="Take care of your very own Teardrop!" property="og:description" />
     <meta content="#4291ff" property="theme-color" />

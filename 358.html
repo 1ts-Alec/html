@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/bulbasaurchat.github.io@de2858a9fa7b7176cee2788842d4278686969811/games/dadish3d/">
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@56fcf11df443c36ca52b29437ab1859af4e90af0/no-ads.js"></script>
+<base href="https://raw.esm.sh/gh/1ts-Alec/bulbasaurchat.github.io@de2858a9fa7b7176cee2788842d4278686969811/games/dadish3d/">
 <script>
 (function() {
   var map = {
-    '1e1205ddd913941ee03ba9e2184e5318.data': 'https://raw.githubusercontent.com/1ts-Alec/bulbasaurchat.github.io/de2858a9fa7b7176cee2788842d4278686969811/games/dadish3d/Build/1e1205ddd913941ee03ba9e2184e5318.data',
-	    '95c35c14f99c257b8362061616967b38.wasm': 'https://raw.githubusercontent.com/1ts-Alec/bulbasaurchat.github.io/de2858a9fa7b7176cee2788842d4278686969811/games/dadish3d/Build/95c35c14f99c257b8362061616967b38.wasm'
+    '1e1205ddd913941ee03ba9e2184e5318.data': 'https://raw.esm.sh/gh/1ts-Alec/bulbasaurchat.github.io@de2858a9fa7b7176cee2788842d4278686969811/games/dadish3d/Build/1e1205ddd913941ee03ba9e2184e5318.data',
+	    '95c35c14f99c257b8362061616967b38.wasm': 'https://raw.esm.sh/gh/1ts-Alec/bulbasaurchat.github.io@de2858a9fa7b7176cee2788842d4278686969811/games/dadish3d/Build/95c35c14f99c257b8362061616967b38.wasm'
   };
   function rewrite(url) {
     if (typeof url !== 'string') return url;
@@ -20,7 +21,7 @@
     // screenshots ORB on jsDelivr image MIME — serve from raw
     var m = url.match(/(\/screenshots\/[^?#]+)/);
     if (m && url.indexOf('jsdelivr.net') !== -1) {
-      return 'https://raw.githubusercontent.com/1ts-Alec/bulbasaurchat.github.io/de2858a9fa7b7176cee2788842d4278686969811/games/dadish3d/' + m[1].replace(/^\//,'');
+      return 'https://raw.esm.sh/gh/1ts-Alec/bulbasaurchat.github.io@de2858a9fa7b7176cee2788842d4278686969811/games/dadish3d/' + m[1].replace(/^\//,'');
     }
     return url;
   }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/spaceflight-simulator@c10c91692e4e156f8450e4deee29c3a79489dcff/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/spaceflight-simulator@c10c91692e4e156f8450e4deee29c3a79489dcff/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity Web Player | Spaceflight Simulator</title>
@@ -67,7 +67,7 @@ var loadingText = document.querySelector("#loading-text");
       );
       const mergedBlob = new Blob(buffers);
       const response = new Response(mergedBlob);
-      await cache.put(cacheKey, response);
+      try { await cache.put(cacheKey, response); } catch (e) { console.warn("cache write skipped:", e); }
       return URL.createObjectURL(mergedBlob);
     }
 
@@ -100,7 +100,7 @@ var loadingText = document.querySelector("#loading-text");
         dataUrl: dataUrl,
         frameworkUrl: buildUrl + "/sfsim.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Stef Morojna",
         productName: "Spaceflight Simulator",
         productVersion: "1.6.00.16",

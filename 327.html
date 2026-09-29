@@ -1,6 +1,11 @@
 
 <!DOCTYPE html>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/slime-io/">
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
+<base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/slime-io/">
 <script nonce="CA2QrendWiTeO_qSXS8GQQ">
     (function () {
         'use strict';
@@ -518,7 +523,7 @@
         })();
     }).call(this);
 </script>
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/gamesnacks.js" data-target-origin="https://gamesnacks.com" nonce="CA2QrendWiTeO_qSXS8GQQ"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/gamesnacks.js" data-target-origin="https://gamesnacks.com" nonce="CA2QrendWiTeO_qSXS8GQQ"></script>
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <title>Cocos Creator | Slimes mobile main</title>

@@ -3,13 +3,13 @@
 
 <html lang="en-us">
 <head>
-<base href="https://cdn.jsdelivr.net/gh/axo323lotl-bit/elitecomposite@ac94003d4b6368fc523e95a40e2ac6a4263df263/money-rush/">
+<base href="https://raw.esm.sh/gh/axo323lotl-bit/elitecomposite@ac94003d4b6368fc523e95a40e2ac6a4263df263/money-rush/">
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 <link rel="stylesheet" href="./style.css"/>
 <!-- Yandex Games SDK -->
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e7aec00d00e1aed3ef63e4364be4bb1a9e45ea62/yandex-sdk.js?lol"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@586764f087a1426c620c13b29c1206f2c5af5e48/yandex-games-stub.js"></script>
 <style>
         /* Убираем выделение по нажатию клавиш */
         canvas:focus {
@@ -58,7 +58,7 @@
             dataUrl: buildUrl + "/Build.data.unityweb",
             frameworkUrl: buildUrl + "/Build.framework.js.unityweb",
             codeUrl: buildUrl + "/Build.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "Pocket Snake",
             productName: "Money Roller",
             productVersion: "0.1"
@@ -152,6 +152,8 @@
         };
 
         function StartUnityInstance_IfUnloaded() {
+            // The SDK setup can finish before the Unity loader script has loaded; start once it has.
+            if (typeof StartUnityInstance !== 'function') { window.startUnityWhenLoaded = true; return; }
             if (spinner.style.display !== "none")
                 StartUnityInstance();
         }

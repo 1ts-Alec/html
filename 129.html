@@ -6,7 +6,7 @@
     
     
     
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@3e89c601bd1680000bfd8170bf12578cee97d145/129/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/assets@3e89c601bd1680000bfd8170bf12578cee97d145/129/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Flappy Bird Multiplayer</title>
@@ -79,7 +79,7 @@
                     dataUrl: "Build/V0.1.data",
                     frameworkUrl: "Build/V0.1.framework.js",
                     codeUrl: mergedUrl,
-                    streamingAssetsUrl: "StreamingAssets",
+                    streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                     companyName: "eli_hoffman",
                     productName: "Flappy Bird Multiplayer",
                     productVersion: "0.1",

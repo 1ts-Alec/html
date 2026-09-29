@@ -7,12 +7,12 @@
   
   
   
-  <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@764761e3152db2b796a52154825fe15a0f37cc7b/flappy%20dunk/">
+  <base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@e22fb82c31919c0f53edbf02e58165558703ed45/flappy%20dunk/">
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Flappy Dunk</title>
   <link rel="stylesheet" href="TemplateData/style.css" nonce="CRrAvEtnTYz2xyLLghZb0w">
-  <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@764761e3152db2b796a52154825fe15a0f37cc7b/ytgame.js" nonce="qdhAB9vIEyxuPCqnXvX_tA"></script>
+  <script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@7cd78cb4a415cecb74734ede3ecc1f31a380102c/ytgame.js" nonce="qdhAB9vIEyxuPCqnXvX_tA"></script>
 
 </head>
 
@@ -46,7 +46,7 @@
         dataUrl: buildUrl + "/flappydunk_unity6_V1.0.1.data.zip",
         frameworkUrl: buildUrl + "/flappydunk_unity6_V1.0.1.framework.js",
         codeUrl: buildUrl + "/flappydunk_unity6_V1.0.1.wasm.zip",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Voodoo",
         productName: "Flappy Dunk",
         productVersion: "1.0.1",

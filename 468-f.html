@@ -3,7 +3,7 @@
 <html lang="en-us">
 
 <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/hollow-knight@1b7d1e452f66268486e9a000a6006b4e8eb527bc/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/hollow-knight@1b7d1e452f66268486e9a000a6006b4e8eb527bc/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Hollow Knight</title>
@@ -154,7 +154,7 @@
                 dataUrl: dataUrl,
                 frameworkUrl: buildUrl + "/hk.framework.js",
                 codeUrl: wasmurl,
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "Team Cherry & ",
                 productName: "Hollow Knight",
                 productVersion: "1.1",

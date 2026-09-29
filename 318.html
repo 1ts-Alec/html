@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e70f022/318/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/assets@e70f022/318/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity Web Player | Roulette</title>
@@ -51,7 +51,7 @@
                 dataUrl: dataUrl,
                 frameworkUrl: buildUrl + "/SideEffectsWebBuild_V0.1.framework.js",
                 codeUrl: wasmUrl,
-                streamingAssetsUrl: "StreamingAssets",
+                streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
                 companyName: "DefaultCompany",
                 productName: "Roulette",
                 productVersion: "0.1.0",

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/baldi-mods@debd42e16b6c6a59045e177c791c7ac779aa9c9f/-3/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/baldi-mods@debd42e16b6c6a59045e177c791c7ac779aa9c9f/-3/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity Web Player | -3</title>
@@ -67,7 +67,7 @@ var loadingText = document.querySelector("#loading-text");
       );
       const mergedBlob = new Blob(buffers);
       const response = new Response(mergedBlob);
-      await cache.put(cacheKey, response);
+      try { await cache.put(cacheKey, response); } catch (e) { console.warn("cache write skipped:", e); }
       return URL.createObjectURL(mergedBlob);
     }
 
@@ -99,7 +99,7 @@ var loadingText = document.querySelector("#loading-text");
         dataUrl: dataUrl,
         frameworkUrl: "Build/minus3bog.framework.js",
         codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Mauzer2137",
         productName: "-3",
         productVersion: "3.-3",

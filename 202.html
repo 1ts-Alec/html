@@ -1,6 +1,11 @@
 
 <!DOCTYPE html>
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@5eb5f778f51fbfc9e2454dfc7fae22e18dad675a/gamesnacks.js" data-target-origin="https://gamesnacks.com" nonce="QHbEavJjDQo_PxSK3M6O6Q"></script>
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@5eb5f778f51fbfc9e2454dfc7fae22e18dad675a/gamesnacks.js" data-target-origin="https://gamesnacks.com" nonce="QHbEavJjDQo_PxSK3M6O6Q"></script>
 <script nonce="QHbEavJjDQo_PxSK3M6O6Q">
     (function () {
         'use strict';
@@ -518,7 +523,7 @@
         })();
     }).call(this);
 </script>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/carrom-clash/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/carrom-clash/">
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8" />
 <title>Carrom Clash</title>
@@ -563,7 +568,7 @@
     <script src="js/libs/pixi.min.js"></script>
     <script src="js/libs/planck.min.js"></script>
     <script src="js/game.js"></script><!DOCTYPE html>
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@5eb5f778f51fbfc9e2454dfc7fae22e18dad675a/gamesnacks.js" data-target-origin="https://gamesnacks.com" nonce="QHbEavJjDQo_PxSK3M6O6Q"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@5eb5f778f51fbfc9e2454dfc7fae22e18dad675a/gamesnacks.js" data-target-origin="https://gamesnacks.com" nonce="QHbEavJjDQo_PxSK3M6O6Q"></script>
 <script nonce="QHbEavJjDQo_PxSK3M6O6Q">
     (function () {
         'use strict';
@@ -1081,7 +1086,7 @@
         })();
     }).call(this);
 </script>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/carrom-clash/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/youtube-playables@d7cdd0dd59b36c2d6d7442d524865e12c4167f76/carrom-clash/">
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8" />
 <title>Carrom Clash</title>

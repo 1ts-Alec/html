@@ -7,8 +7,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Stick Slasher</title>
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/1ts-Alec/junk@9ae1e385f5f994c4893fb216a1980b88f73fdfd2/stickslasher/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/1ts-Alec/junk@9ae1e385f5f994c4893fb216a1980b88f73fdfd2/stickslasher/TemplateData/style.css">
+    <link rel="shortcut icon" href="https://raw.esm.sh/gh/1ts-Alec/junk@9ae1e385f5f994c4893fb216a1980b88f73fdfd2/stickslasher/TemplateData/favicon.ico">
+    <link rel="stylesheet" href="https://raw.esm.sh/gh/1ts-Alec/junk@9ae1e385f5f994c4893fb216a1980b88f73fdfd2/stickslasher/TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -58,13 +58,13 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "https://cdn.jsdelivr.net/gh/1ts-Alec/junk@9ae1e385f5f994c4893fb216a1980b88f73fdfd2/stickslasher/Build";
+      var buildUrl = "https://raw.esm.sh/gh/1ts-Alec/junk@9ae1e385f5f994c4893fb216a1980b88f73fdfd2/stickslasher/Build";
       var loaderUrl = buildUrl + "/StickWeb.loader.js";
       var config = {
         dataUrl: buildUrl + "/StickWeb.data",
         frameworkUrl: buildUrl + "/StickWeb.framework.js",
         codeUrl: buildUrl + "/StickWeb.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
         companyName: "Beruke Games",
         productName: "Stick Slasher",
         productVersion: "1.0",

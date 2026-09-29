@@ -2,6 +2,11 @@
 <script>window.dataLayer=[];window.gtag=function(){};</script><!DOCTYPE html>
 <html lang="en-us">
    <head>
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
     
     
       <script>
@@ -17,9 +22,9 @@
       <meta charset="utf-8">
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Block Blast Puzzle</title>
-      <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/1ts-Alec/bl/TemplateData/favicon.ico">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/1ts-Alec/bl/TemplateData/style.css">
-      <link rel="manifest" href="https://cdn.jsdelivr.net/gh/1ts-Alec/bl/manifest.webmanifest">
+      <link rel="shortcut icon" href="https://raw.esm.sh/gh/1ts-Alec/bl/TemplateData/favicon.ico">
+      <link rel="stylesheet" href="https://raw.esm.sh/gh/1ts-Alec/bl/TemplateData/style.css">
+      <link rel="manifest" href="https://raw.esm.sh/gh/1ts-Alec/bl/manifest.webmanifest">
    
 </head>
    <body>
@@ -36,7 +41,7 @@
       <script>
          window.addEventListener("load", function () {
            if ("serviceWorker" in navigator) {
-             navigator.serviceWorker.register("https://cdn.jsdelivr.net/gh/1ts-Alec/bl/ServiceWorker.js");
+             navigator.serviceWorker.register("https://raw.esm.sh/gh/1ts-Alec/bl/ServiceWorker.js");
            }
          });
          var container = document.querySelector("#unity-container");
@@ -62,13 +67,13 @@
            updateBannerVisibility();
          }
          
-         var buildUrl = "https://cdn.jsdelivr.net/gh/1ts-Alec/bl/Build";
+         var buildUrl = "https://raw.esm.sh/gh/1ts-Alec/bl/Build";
          var loaderUrl = buildUrl + "/BlockBlast1.1-8.loader.js";
          var config = {
            dataUrl: buildUrl + "/BlockBlast1.1-8.data.unityweb",
            frameworkUrl: buildUrl + "/BlockBlast1.1-8.framework.js.unityweb",
            codeUrl: buildUrl + "/BlockBlast1.1-8.wasm.unityweb",
-           streamingAssetsUrl: "StreamingAssets",
+           streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
            companyName: "reun",
            productName: "Block Blast Puzzle",
            productVersion: "1.1",

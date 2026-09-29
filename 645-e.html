@@ -3,7 +3,7 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/arthurs-nightmare/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/arthurs-nightmare/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Arthur's Nightmare</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico"> 
@@ -16,7 +16,7 @@
    
     if (typeof url === 'string' && url.includes('StreamingAssets/')) {
       const filename = url.split('StreamingAssets/').pop();
-      url = 'https://cdn.jsdelivr.net/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/arthurs-nightmare/StreamingAssets/' + filename;
+      url = 'https://raw.esm.sh/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/arthurs-nightmare/StreamingAssets/' + filename;
       args[0] = url;
       console.log('[Fetch Intercepted] Redirecting to:', url);
     }
@@ -28,7 +28,7 @@
   XMLHttpRequest.prototype.open = function(method, url, ...rest) {
     if (typeof url === 'string' && url.includes('StreamingAssets/')) {
       const filename = url.split('StreamingAssets/').pop();
-      url = 'https://cdn.jsdelivr.net/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/arthurs-nightmare/StreamingAssets/' + filename;
+      url = 'https://raw.esm.sh/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/arthurs-nightmare/StreamingAssets/' + filename;
       console.log('[XHR Intercepted] Redirecting to:', url);
     }
     
@@ -44,7 +44,7 @@
       element.setAttribute = function(name, value) {
         if (name === 'src' && typeof value === 'string' && value.includes('StreamingAssets/')) {
           const filename = value.split('StreamingAssets/').pop();
-          value = 'https://cdn.jsdelivr.net/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/arthurs-nightmare/StreamingAssets/' + filename;
+          value = 'https://raw.esm.sh/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/arthurs-nightmare/StreamingAssets/' + filename;
           console.log('[Media Element Intercepted] Redirecting to:', value);
         }
         return originalSetAttribute.call(this, name, value);
@@ -54,7 +54,7 @@
         set: function(value) {
           if (typeof value === 'string' && value.includes('StreamingAssets/')) {
             const filename = value.split('StreamingAssets/').pop();
-            value = 'https://cdn.jsdelivr.net/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/arthurs-nightmare/StreamingAssets/' + filename;
+            value = 'https://raw.esm.sh/gh/1ts-Alec/ports@6358736132208699cda37b554c75510a5fb77e41/arthurs-nightmare/StreamingAssets/' + filename;
             console.log('[Media src Intercepted] Redirecting to:', value);
           }
           this.setAttribute('src', value);
@@ -98,7 +98,7 @@
         debug: true
       };
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/merge.js"></script>
+    <script src="https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@734488f3e2a965c6a87fce24eac54623757f017f/merge.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
       setTimeout(function() {

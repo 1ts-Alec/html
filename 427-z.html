@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <base href="https://cdn.jsdelivr.net/gh/1ts-Alec/web-port@4e018d7f2ca2b3d77ecfd0123d2926421e2b26a5/omori-fixed/">
+    <base href="https://raw.esm.sh/gh/1ts-Alec/web-port@4e018d7f2ca2b3d77ecfd0123d2926421e2b26a5/omori-fixed/">
     <meta charset="UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -19,23 +19,47 @@
     <script type="text/javascript" src="nipplejs.js?fgjdfngjksdgnkdsjgn"></script>
     <script type="text/javascript" src="gamepad.js?fgjdfngjksdgnkdsjgn"></script>
     <script type="text/javascript" src="js/plugins/aaa___bundle.js?fgjdfnghdfghjfgjhfgjfgjfjgjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="data.bundle.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="languages.en.bundle.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="maps.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/libs/js-yaml-master/jsyaml.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/libs/pixi.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/libs/pixi-tilemap.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/libs/pixi-picture.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/libs/lz-string.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/libs/iphone-inline-video.browser.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/rpg_core.js?sdfgsgdhrg3455346366rj5e6h456e6j"></script>
-    <script type="text/javascript" src="js/rpg_managers.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/rpg_objects.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/rpg_scenes.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/rpg_sprites.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/rpg_windows.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/plugins.js?fgjdfngjksdgnkdsjgn"></script>
-    <script type="text/javascript" src="js/main.js?fgjdfngjksdgnkdsjgn"></script>
+    <script>
+      // data.bundle.js (78MB) is over raw.esm.sh's ~50MB limit, so it is stored as 20MB parts.
+      window.SPLIT_FILES = { 'https://raw.esm.sh/gh/1ts-Alec/web-port@4d6e597f759e4233429a830cf8ec3987acd7384b/omori-fixed/data.bundle.js': { parts: 4, size: 78119680 } };
+    </script>
+    <script src="https://raw.esm.sh/gh/1ts-Alec/assets@6bf5d10b62bc12134f4c1a6c43b6b78a3b4f4200/split-files.js"></script>
+    <script>
+      // Join the data bundle, then load the remaining scripts in their original order.
+      (function () {
+        var rest = [
+        'languages.en.bundle.js?fgjdfngjksdgnkdsjgn',
+        'maps.js?fgjdfngjksdgnkdsjgn',
+        'js/libs/js-yaml-master/jsyaml.js?fgjdfngjksdgnkdsjgn',
+        'js/libs/pixi.js?fgjdfngjksdgnkdsjgn',
+        'js/libs/pixi-tilemap.js?fgjdfngjksdgnkdsjgn',
+        'js/libs/pixi-picture.js?fgjdfngjksdgnkdsjgn',
+        'js/libs/lz-string.js?fgjdfngjksdgnkdsjgn',
+        'js/libs/iphone-inline-video.browser.js?fgjdfngjksdgnkdsjgn',
+        'js/rpg_core.js?sdfgsgdhrg3455346366rj5e6h456e6j',
+        'js/rpg_managers.js?fgjdfngjksdgnkdsjgn',
+        'js/rpg_objects.js?fgjdfngjksdgnkdsjgn',
+        'js/rpg_scenes.js?fgjdfngjksdgnkdsjgn',
+        'js/rpg_sprites.js?fgjdfngjksdgnkdsjgn',
+        'js/rpg_windows.js?fgjdfngjksdgnkdsjgn',
+        'js/plugins.js?fgjdfngjksdgnkdsjgn',
+        'js/main.js?fgjdfngjksdgnkdsjgn'
+        ];
+        function load(src) {
+          return new Promise(function (resolve, reject) {
+            var s = document.createElement('script');
+            s.src = src; s.async = false; s.onload = resolve; s.onerror = reject;
+            document.head.appendChild(s);
+          });
+        }
+        SPLIT_FILES_URL('https://raw.esm.sh/gh/1ts-Alec/web-port@4d6e597f759e4233429a830cf8ec3987acd7384b/omori-fixed/data.bundle.js').then(function (url) {
+          return rest.reduce(function (p, src) { return p.then(function () { return load(src); }); }, load(url));
+        }).then(function () {
+          // main.js starts the game from window.onload, which may already have fired.
+          if (document.readyState === 'complete' && typeof window.onload === 'function') window.onload();
+        });
+      })();
+    </script>
     <!-- gn math patch -->
     <script>
         // full screen the game ----------------------------------------------------------

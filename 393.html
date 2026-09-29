@@ -3,13 +3,13 @@
 
 <html lang="en-us">
 <head>
-<base href="https://cdn.jsdelivr.net/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/giant-wanted/">
+<base href="https://raw.esm.sh/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/giant-wanted/">
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 <link rel="stylesheet" href="./style.css"/>
 <!-- Yandex Games SDK -->
-<script src="https://cdn.jsdelivr.net/gh/1ts-Alec/assets@e7aec00d00e1aed3ef63e4364be4bb1a9e45ea62/yandex-sdk.js?lol"></script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@586764f087a1426c620c13b29c1206f2c5af5e48/yandex-games-stub.js"></script>
 <style>
         /* Убираем выделение по нажатию клавиш */
         canvas:focus {
@@ -55,10 +55,10 @@
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/bb0d9ecdb05db3e84da20bd14a4f84dc.loader.js";
         const config = {
-            dataUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/giant-wanted/Build/1eb373845d6855a1c77899b98367c671.data",
+            dataUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/giant-wanted/Build/1eb373845d6855a1c77899b98367c671.data",
             frameworkUrl: buildUrl + "/17b55d1fae10a27a151df7de1a254a5d.framework.js",
-            codeUrl: "https://raw.githubusercontent.com/1ts-Alec/brainrot/62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/giant-wanted/Build/9faca01400f10667018e26f5c8ab1473.wasm",
-        streamingAssetsUrl: "StreamingAssets",
+            codeUrl: "https://raw.esm.sh/gh/1ts-Alec/brainrot@62d9ad5dc24b75038d4effe4f7e2cb889eb7b886/giant-wanted/Build/9faca01400f10667018e26f5c8ab1473.wasm",
+        streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
             companyName: "DefaultCompany",
             productName: "GaintWanted",
             productVersion: "0.1"
@@ -168,6 +168,8 @@
         };
 
         function StartUnityInstance_IfUnloaded() {
+            // The SDK setup can finish before the Unity loader script has loaded; start once it has.
+            if (typeof StartUnityInstance !== 'function') { window.startUnityWhenLoaded = true; return; }
             if (spinner.style.display !== "none")
                 StartUnityInstance();
         }
