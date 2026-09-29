@@ -51,6 +51,13 @@
             script.async = false;
             script.src = url;
             document.body.appendChild(script);
+            if (/laya\.core/.test(url)) {
+                // Laya takes its base path from location, which ignores <base>; use the game folder instead.
+                var fix = document.createElement("script");
+                fix.async = false;
+                fix.src = "data:text/javascript," + encodeURIComponent("Laya.Laya._getUrlPath = function () { return Laya.URL.getPath(document.baseURI); };");
+                document.body.appendChild(fix);
+            }
         }
     </script>
 <script type="text/javascript" src="index.js"></script>
