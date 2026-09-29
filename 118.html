@@ -459,10 +459,10 @@ const originalFetch = window.fetch;
 
 window.fetch = function(input, options) {
     if (typeof input === 'string' && input.endsWith("AssetBundles/WebGL/planets")) {
-        input = 'https://raw.githubusercontent.com/1ts-Alec/youtube-playables/c5eefc5c13316b94c58e63cb5270b99a13c88fea/solar-smash/StreamingAssets/AssetBundles/WebGL/planets';
+        input = 'https://raw.esm.sh/gh/1ts-Alec/youtube-playables@c5eefc5c13316b94c58e63cb5270b99a13c88fea/solar-smash/StreamingAssets/AssetBundles/WebGL/planets';
         return originalFetch(input, options);
     } else if (typeof input === 'string' && input.endsWith("AssetBundles/WebGL/planets2")) {
-        input = 'https://raw.githubusercontent.com/1ts-Alec/youtube-playables/c5eefc5c13316b94c58e63cb5270b99a13c88fea/solar-smash/StreamingAssets/AssetBundles/WebGL/planets2';
+        input = 'https://raw.esm.sh/gh/1ts-Alec/youtube-playables@c5eefc5c13316b94c58e63cb5270b99a13c88fea/solar-smash/StreamingAssets/AssetBundles/WebGL/planets2';
         return originalFetch(input, options);
     }
 

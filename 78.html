@@ -27,7 +27,7 @@
     <script src="https://raw.esm.sh/gh/1ts-Alec/BurritoBison@847c40b3aeee020afd4ffffacb65e36404e5a9de/burrito-bison-ll.js"></script><script src="https://raw.esm.sh/gh/1ts-Alec/Arowadas@7be59f866ec50056109ed7a4b2a227a5f0494025/terminal/games/burrito-bison/Build/UnityLoader.js"></script>
    <script>
 (async function(){
-  const RAW='https://raw.githubusercontent.com/1ts-Alec/BurritoBison/847c40b3aeee020afd4ffffacb65e36404e5a9de/';
+  const RAW='https://raw.esm.sh/gh/1ts-Alec/BurritoBison@847c40b3aeee020afd4ffffacb65e36404e5a9de/';
   const cfg=await (await fetch('https://raw.esm.sh/gh/1ts-Alec/BurritoBison@847c40b3aeee020afd4ffffacb65e36404e5a9de/burrito-bison-ll.json')).json();
   for (const k of Object.keys(cfg)) {
     if (typeof cfg[k]==='string' && /\.(unityweb|data|wasm|jsgz)(\?|$)/i.test(cfg[k]) && !/^https?:/i.test(cfg[k])) cfg[k]=RAW+cfg[k];

@@ -78,7 +78,7 @@
       const m = gameBase.match(/cg-rip@[^/]+\/([^/]+)\//) || gameBase.match(/cg-rip\/[^/]+\/([^/]+)\//);
       const game = m ? m[1] : '';
       const file = baseUrl.replace(/^Build\//,'');
-      const rawRoot = `https://raw.githubusercontent.com/1ts-Alec/cg-rip/151f9126d2ccb6b81dc0f93155e305900d423d5c/${game}/Build/`;
+      const rawRoot = `https://raw.esm.sh/gh/1ts-Alec/cg-rip@151f9126d2ccb6b81dc0f93155e305900d423d5c/${game}/Build/`;
       const parts = [];
       const n = partCount || 99;
       for (let i = 1; i <= n; i++) {

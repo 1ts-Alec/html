@@ -154,7 +154,7 @@
     <script>
       var gameInstance;
       (async function(){
-        const RAW='https://raw.githubusercontent.com/1ts-Alec/unxa.github.io/976db99398423b4e5a8b327892c2b57b6a5b766f/g/drift-hunters/';
+        const RAW='https://raw.esm.sh/gh/1ts-Alec/unxa.github.io@976db99398423b4e5a8b327892c2b57b6a5b766f/g/drift-hunters/';
         const cfg=await (await fetch('https://raw.esm.sh/gh/1ts-Alec/unxa.github.io@976db99398423b4e5a8b327892c2b57b6a5b766f/g/drift-hunters/dh.json')).json();
         for (const k of Object.keys(cfg)) {
           if (typeof cfg[k]==='string' && /\.(unityweb|data|wasm|jsgz)(\?|$)/i.test(cfg[k]) && !/^https?:/i.test(cfg[k])) cfg[k]=RAW+cfg[k];

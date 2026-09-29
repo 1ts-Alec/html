@@ -147,7 +147,7 @@
   </style>
   <script>
   (async function(){
-    const raw='https://raw.githubusercontent.com/1ts-Alec/UGS-Assets/5d03e63d760d24f4d1a0d3d7757cfae820b58814/fruit%20ninja/vendors.bundle.js';
+    const raw='https://raw.esm.sh/gh/1ts-Alec/UGS-Assets@5d03e63d760d24f4d1a0d3d7757cfae820b58814/fruit%20ninja/vendors.bundle.js';
     const txt=await (await fetch(raw)).text();
     const blobUrl=URL.createObjectURL(new Blob([txt],{type:'application/javascript'}));
     await new Promise((res,rej)=>{ const s=document.createElement('script'); s.src=blobUrl; s.onload=res; s.onerror=rej; document.body.appendChild(s); });
