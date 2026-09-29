@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="en-us">
   <head>
+    <script>
+      // The game build fetches its server list from jsDelivr; load it through esm.sh instead.
+      (function () {
+        var origFetch = window.fetch;
+        window.fetch = function (input, init) {
+          if (typeof input === 'string' && input.indexOf('https://cdn.jsdelivr.net/gh/') === 0) {
+            input = 'https://raw.esm.sh/gh/' + input.slice('https://cdn.jsdelivr.net/gh/'.length);
+          }
+          return origFetch.call(this, input, init);
+        };
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Unity WebGL Player | CheeseRolling</title>

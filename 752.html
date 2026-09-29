@@ -9,6 +9,8 @@
 	<title>Unity WebGL Player | Bad Piggies</title>
 	<link rel="shortcut icon" href="TemplateData/favicon.ico">
 	<link rel="stylesheet" href="TemplateData/style.css">
+	<!-- style.css points this logo at jsDelivr; load the same file through esm.sh (relative to <base>). -->
+	<style>body::before { background-image: url('TemplateData/progressLogo.Dark.png'); }</style>
 	<script src="TemplateData/UnityProgress.js"></script>
 	<script src="Build/UnityLoader.js"></script>
 	<style>
