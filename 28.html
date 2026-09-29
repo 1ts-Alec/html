@@ -1667,7 +1667,9 @@ if(!(window.console && console.log)) {
 
         <div id="overlay"></div>
 
-      <script>window.ga=function(){};</script>
+      <script>window.ga=function(){};
+      // No-op stand-ins for the analytics hooks the game calls (gax) and the removed Google loader (initGoogle).
+      window.gax=function(){};window.initGoogle=function(){};</script>
 
       <script nonce="-sOJ1RQ8_ggBND0jamQKHQ">
 
