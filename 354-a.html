@@ -9,7 +9,11 @@
     <title>Unity WebGL Player | AdVenture Capitalist!</title>
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
-    <script src="/js/all.js"></script>
+    <script>
+      // webgl.data (94MB) is over raw.esm.sh's ~50MB limit, so it is stored as 20MB parts.
+      window.SPLIT_FILES = { 'https://raw.esm.sh/gh/1ts-Alec/selenite-old@22be6589a843125d072fce8dafd96d089f1fe43a/adventure-capitalist/Release/webgl.data': { parts: 5, size: 94384055 } };
+    </script>
+    <script src="https://raw.esm.sh/gh/1ts-Alec/assets@6bf5d10b62bc12134f4c1a6c43b6b78a3b4f4200/split-files.js"></script>
 
 
 </head>
@@ -29,7 +33,7 @@
         // connect to canvas
         var Module = {
             TOTAL_MEMORY: 201326592,
-            filePackagePrefixURL: "Release/",
+            filePackagePrefixURL: "https://raw.esm.sh/gh/1ts-Alec/selenite-old@22be6589a843125d072fce8dafd96d089f1fe43a/adventure-capitalist/Release/",
             memoryInitializerPrefixURL: "Release/",
             preRun: [],
             postRun: [],
