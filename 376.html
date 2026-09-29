@@ -146,6 +146,8 @@
         };
 
         function StartUnityInstance_IfUnloaded() {
+            // The SDK setup can finish before the Unity loader script has loaded; start once it has.
+            if (typeof StartUnityInstance !== 'function') { window.startUnityWhenLoaded = true; return; }
             if (spinner.style.display !== "none")
                 StartUnityInstance();
         }
