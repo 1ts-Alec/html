@@ -2,6 +2,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<script>
+// Game images are served from raw.esm.sh; request them with CORS so WebGL can use them as textures
+// (the engine creates some images without setting crossOrigin).
+(function () {
+  var d = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src');
+  Object.defineProperty(HTMLImageElement.prototype, 'src', {
+    configurable: true, enumerable: d.enumerable, get: d.get,
+    set: function (v) {
+      try {
+        if (this.crossOrigin === null && new URL(String(v), document.baseURI).hostname === 'raw.esm.sh') this.crossOrigin = 'anonymous';
+      } catch (e) {}
+      d.set.call(this, v);
+    }
+  });
+})();
+</script>
     <base href="https://raw.esm.sh/gh/1ts-Alec/LAMAR@bf8ff775baa0b9d6e530315b2553db29093bca5a/bobtherobber2/">
     
     
