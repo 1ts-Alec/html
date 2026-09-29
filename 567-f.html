@@ -19,7 +19,7 @@
 
     <script>
     async function mergeParts(baseUrl, partCount) {
-      // baseUrl is like "Build/foo.wasm" (relative); fetch parts from raw.githubusercontent (jsDelivr 403 on >20MB)
+      // baseUrl is like "Build/foo.wasm" (relative); fetch parts from raw.esm.sh
       const gameBase = document.querySelector('base')?.href || '';
       // derive game folder from base href
       const m = gameBase.match(/cg-rip@[^/]+\/([^/]+)\//) || gameBase.match(/cg-rip\/[^/]+\/([^/]+)\//);
