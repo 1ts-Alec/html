@@ -2,6 +2,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
     <base href="https://raw.esm.sh/gh/1ts-Alec/LAMAR@bf8ff775baa0b9d6e530315b2553db29093bca5a/protektor/">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />

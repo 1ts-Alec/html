@@ -2,6 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
 		<base href="https://raw.esm.sh/gh/1ts-Alec/google-class@60509e8164a239d3285f7700518d7b5c6a396cb8/bart-blast/">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">

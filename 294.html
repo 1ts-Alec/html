@@ -2,6 +2,11 @@
 <html lang=en>
 
 <head>
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
 <script src="https://raw.esm.sh/gh/1ts-Alec/assets@56fcf11df443c36ca52b29437ab1859af4e90af0/no-ads.js"></script>
     <base href="https://raw.esm.sh/gh/1ts-Alec/assets@3f9f20f/294/">
     <meta charset=UTF-8>

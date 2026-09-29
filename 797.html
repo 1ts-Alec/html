@@ -2,6 +2,11 @@
 <!-- port by boko -->
 <html lang="en">
 	<head>
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
 		<base href="https://raw.esm.sh/gh/1ts-Alec/fih-port@08fb20b217370f5e2373af88d9e207df08d638cb/port/">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">

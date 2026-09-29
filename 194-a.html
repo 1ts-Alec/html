@@ -4,6 +4,11 @@
 
 <html lang="en">
 <head>
+<script>
+// The game files are served from another origin, where service workers can't be registered;
+// report them as unsupported so the game skips registration instead of throwing.
+try { delete Navigator.prototype.serviceWorker; } catch (e) {}
+</script>
   <meta charset="utf-8">
   <base href="https://raw.esm.sh/gh/1ts-Alec/ugss@b4ad0afb174a2c482c3d6c13b748095704e17b4d/people-playground/">
     <title>people playground.</title>
