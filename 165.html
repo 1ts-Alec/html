@@ -3,6 +3,13 @@
 <html lang="en-us">
 
 <head>
+<script>
+  // Files over raw.esm.sh's ~50MB limit are stored as ~20MB parts next to the original.
+  window.SPLIT_FILES = {
+    'https://raw.esm.sh/gh/1ts-Alec/assets@79df7ebe5f3920a242fe857b75cd503c777592ae/165/Build/CheeseChompers3DWeb.data.unityweb': { parts: 5, size: 87798456 }
+  };
+</script>
+<script src="https://raw.esm.sh/gh/1ts-Alec/assets@6bf5d10b62bc12134f4c1a6c43b6b78a3b4f4200/split-files.js"></script>
     <base href="https://raw.esm.sh/gh/1ts-Alec/assets@6762056bb393d79a51f0baf29e8f7cc2044a9df5/165/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -42,7 +49,7 @@
         var buildUrl = "Build";
         var loaderUrl = buildUrl + "/CheeseChompers3DWeb.loader.js";
         var config = {
-            dataUrl: "https://raw.githubusercontent.com/1ts-Alec/assets/6762056bb393d79a51f0baf29e8f7cc2044a9df5/165/Build/CheeseChompers3DWeb.data.unityweb",
+            dataUrl: "https://raw.esm.sh/gh/1ts-Alec/assets@79df7ebe5f3920a242fe857b75cd503c777592ae/165/Build/CheeseChompers3DWeb.data.unityweb",
             frameworkUrl: buildUrl + "/CheeseChompers3DWeb.framework.js.unityweb",
             codeUrl: buildUrl + "/CheeseChompers3DWeb.wasm.unityweb",
             streamingAssetsUrl: new URL("StreamingAssets", document.baseURI).href,
