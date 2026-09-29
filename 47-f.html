@@ -12,7 +12,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <title>Vex 3</title>
-    <script>window.google=window.google||{};google.ima=google.ima||{AdDisplayContainer:function(){this.initialize=function(){};},AdsLoader:function(){this.addEventListener=function(){};this.contentComplete=function(){};this.destroy=function(){};},AdsRequest:function(){},AdEvent:{},AdErrorEvent:{}};window.adsbygoogle=window.adsbygoogle||[];</script>
     <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
 
 </head>
@@ -34,6 +33,23 @@
         }
         addScript('version.js', Date.now(), function() {
             addScript(gameName, version, function() {
+                // The sponsor splash screen loads its Spine animations from fbrq.io, which no longer exists.
+                // A Spine object whose files never loaded becomes an empty placeholder instead of crashing.
+                function safeSpine(addSpine) {
+                    return function () {
+                        try { return addSpine.apply(this, arguments); } catch (e) {
+                            var group = this.game.add.group();
+                            return new Proxy(group, { get: function (t, k) { return k in t ? t[k] : function () { return this; }; } });
+                        }
+                    };
+                }
+                var current = safeSpine(Phaser.GameObjectFactory.prototype.spine);
+                // The Spine plugin installs its factory when the game boots; wrap whatever it installs.
+                Object.defineProperty(Phaser.GameObjectFactory.prototype, 'spine', {
+                    configurable: true,
+                    get: function () { return current; },
+                    set: function (fn) { current = safeSpine(fn); }
+                });
                 var game = new Vex3.Game.getInstance();
                 game.start();
             })
